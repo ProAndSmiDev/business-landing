@@ -1,0 +1,26 @@
+@mixin setFamily($fontName, $fileName, $fontWeight, $fontStyle: false) {
+  @font-face {
+    font-family: $fontName;
+    font-display: swap;
+    @if $fontStyle {
+      font-style: italic;
+    }
+    font-weight: $fontWeight;
+    src: url("../fonts/#{$fontName}/#{$fileName}.woff2") format("woff2"),
+    url("../fonts/#{$fontName}/#{$fileName}.ttf") format("truetype");
+  }
+}
+
+@mixin setImage($img_path, $img_format: 'jpg') {
+  background-image: url($img_path + '.' + $img_format);
+
+  @supports (background-image: -webkit-image-set($img_path + '.webp', 1x)) {
+    background-image: -webkit-image-set($img_path + '.webp', 1x);
+  }
+}
+
+@mixin setTruncate {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

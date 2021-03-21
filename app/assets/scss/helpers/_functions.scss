@@ -1,0 +1,23 @@
+@function strip-units($unit) {
+  @return $unit / ($unit * 0 + 1);
+}
+
+@function em($args...) {
+  $context: strip-units(nth($args, length($args)));
+  $result: ();
+  $separator: list_separator($args);
+
+  @for $i from 1 through length($args) - 1 {
+    $value: nth($args, $i);
+    @if type-of($value) == 'number' {
+      $value: strip-units($value);
+      $result: append($result, $value / $context * 1em, $separator);
+    } @else if type-of($value) == 'list' {
+      $result: append($result, em(append($value, $context)...), $separator);
+    } @else {
+      $result: append($result, $value, $separator);
+    }
+  }
+
+  @return if(length($result) == 1, nth($result, 1), $result);
+}

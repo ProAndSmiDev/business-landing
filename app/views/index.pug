@@ -1,0 +1,9 @@
+extends ../templates/_template
+
+block SEO
+  +meta('keywords', company.seoInfo.keywords)
+  +meta('description', company.seoInfo.description)
+  title= company.seoInfo.title
+
+block Main
+  p some content components here

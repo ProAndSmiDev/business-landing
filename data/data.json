@@ -1,0 +1,13 @@
+{
+  "company": {
+    "seoInfo": {
+      "title": "Project name - Page name",
+      "keywords": "some, keys, for, project",
+      "description": "Some description for project"
+    }
+  },
+  "copyright": {
+    "author": "AndSmi",
+    "copyright": "Developed by AndSmi"
+  }
+}
