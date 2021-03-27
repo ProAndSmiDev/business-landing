@@ -1,11 +1,21 @@
-mixin meta(name, content)
+mixin genMeta(name, content)
     meta(name=name content=content)
 
-mixin link(file, rel)
+mixin genLink(file, rel)
     if(rel === 'shortcut icon')
         link(href='/img/' + file, rel=rel)
     else if(rel === 'stylesheet')
         link(href='/css/' + file + '.css', rel=rel)
 
-mixin script(file)
+mixin genScript(file)
     script(src="/js/" + file + ".js")
+
+mixin genMenu(menu, parent, target)
+  ul.bel-list(class=parent + '__list')
+    for val in menu
+      li.__item
+        a.__link(href=val.url title=val.urlTitle target=target)
+          if menu === menuSocials
+            span.__icon(class='bel-list__icon--' + val.postfix)
+          else
+            span.__txt= val.title

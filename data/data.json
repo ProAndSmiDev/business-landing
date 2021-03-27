@@ -1,11 +1,73 @@
 {
   "company": {
+    "logo": {
+      "fileName": "logo.svg",
+      "alt": "Company's logo",
+      "url": "#",
+      "urlTitle": "Linked logo"
+    },
     "seoInfo": {
       "title": "Project name - Page name",
       "keywords": "some, keys, for, project",
       "description": "Some description for project"
     }
   },
+  "menuBlocks": [
+    {
+      "title": "Home",
+      "urlTitle": "Go to beginning",
+      "url": "#"
+    },
+    {
+      "title": "About us",
+      "urlTitle": "Go to section About us",
+      "url": "#about-us"
+    },
+    {
+      "title": "Team",
+      "urlTitle": "Go to section Team",
+      "url": "#team"
+    },
+    {
+      "title": "Projects",
+      "urlTitle": "Go to section Projects",
+      "url": "#projects"
+    },
+    {
+      "title": "Contact",
+      "urlTitle": "Go to section Contact",
+      "url": "#contact"
+    }
+  ],
+  "menuSocials": [
+    {
+      "urlTitle": "We placed in facebook",
+      "url": "#",
+      "postfix": "fb"
+    },
+    {
+      "urlTitle": "We placed in Twitter",
+      "url": "#about-us",
+      "postfix": "tw"
+    },
+    {
+      "urlTitle": "We placed in Instagramm",
+      "url": "#team",
+      "postfix": "in"
+    }
+  ],
+  "menuPolicy": [
+    {
+      "title": "Privacy Policy",
+      "urlTitle": "Go to Privacy Policy page",
+      "url": "/privacy-policy"
+    },
+    {
+      "title": "Terms & Conditions",
+      "urlTitle": "Go to Terms and Conditions page",
+      "url": "/terms-and-conditions"
+    }
+  ],
   "copyright": {
     "author": "AndSmi",
     "copyright": "Developed by AndSmi"

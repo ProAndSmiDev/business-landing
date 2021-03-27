@@ -3,20 +3,41 @@ doctype html
 html(lang="en")
     head
         meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
-        +meta('viewport', 'width=device-width, initial-scale=1')
+        +genMeta('viewport', 'width=device-width, initial-scale=1')
         block SEO
         each val, i in copyright
-          +meta(i, val)
-        +link('favicon.ico', 'shortcut icon')
-        +link('styles', 'stylesheet')
+          +genMeta(i, val)
+        +genLink('favicon.ico', 'shortcut icon')
+        +genLink('styles', 'stylesheet')
     body
-        .business-landing
-            header.bl-header.__header
-              p some header components here
-            main.bl-main.__main
-              block Main
-            footer.bl-footer.__footer
-              p some footer components here
+        .bel-landing
+            header.bel-header.__header
+              .__wrapper.bel-wrapper
+                include ../components/logo/Index
+                nav.bel-menu.__menu
+                  +genMenu(menuBlocks, 'bel-menu')
 
-    +script('libs.min')
-    +script('app.min')
+            main.bel-main.__main
+              block Main
+
+            footer.bel-footer.__footer
+              .__wrapper.bel-wrapper
+                .__upper
+                  nav.bel-menu.__menu
+                    +genMenu(menuBlocks, 'bel-menu')
+                  .bel-subscribe.__subscribe
+                    .__title Subscribe
+                    form.bel-subscribe-form.__form
+                      input.__email
+                      button.__submit
+                  .bel-info.__info
+                    .__title Contact
+                    .__text 624 Green Ave, Suite 123 New York, CA 84104
+                    +genMenu(menuSocials, 'bel-info')
+
+                .__lower
+                  .bel-copyright.__copyright © 2018 Company. Tagline lorem ipsum dolor sit amet, consectetur adipiscing eiusmod
+                  +genMenu(menuPolicy, 'bel-footer', '__blank')
+
+    +genScript('libs.min')
+    +genScript('app.min')

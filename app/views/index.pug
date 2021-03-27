@@ -1,8 +1,8 @@
 extends ../templates/_template
 
 block SEO
-  +meta('keywords', company.seoInfo.keywords)
-  +meta('description', company.seoInfo.description)
+  +genMeta('keywords', company.seoInfo.keywords)
+  +genMeta('description', company.seoInfo.description)
   title= company.seoInfo.title
 
 block Main
