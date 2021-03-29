@@ -14,8 +14,7 @@ html(lang="en")
             header.bel-header.__header
               .__wrapper.bel-wrapper
                 include ../components/logo/Index
-                nav.bel-menu.__menu
-                  +genMenu(menuBlocks, 'bel-menu')
+                +genMainMenu(menuBlocks, 'bel-header', true)
 
             main.bel-main.__main
               block Main
@@ -23,21 +22,22 @@ html(lang="en")
             footer.bel-footer.__footer
               .__wrapper.bel-wrapper
                 .__upper
-                  nav.bel-menu.__menu
-                    +genMenu(menuBlocks, 'bel-menu')
+                  .bel-links.__links
+                    +genTitle('', 'bel-links', 'Site links')
+                    +genMainMenu(menuBlocks, 'bel-links', true)
                   .bel-subscribe.__subscribe
-                    .__title Subscribe
+                    +genTitle('', 'bel-subscribe', 'Subscribe')
                     form.bel-subscribe-form.__form
                       input.__email
                       button.__submit
                   .bel-info.__info
-                    .__title Contact
+                    +genTitle('', 'bel-info', 'Contact')
                     .__text 624 Green Ave, Suite 123 New York, CA 84104
-                    +genMenu(menuSocials, 'bel-info')
+                    +genIconMenu(menuSocials, 'bel-info', '_blank')
 
                 .__lower
                   .bel-copyright.__copyright © 2018 Company. Tagline lorem ipsum dolor sit amet, consectetur adipiscing eiusmod
-                  +genMenu(menuPolicy, 'bel-footer', '__blank')
+                  +genMainMenu(menuPolicy, 'bel-footer')
 
-    +genScript('libs.min')
-    +genScript('app.min')
+        +genScript('libs.min')
+        +genScript('app.min')

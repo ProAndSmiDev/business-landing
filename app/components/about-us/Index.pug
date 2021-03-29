@@ -1,12 +1,11 @@
 section#about-us
   .bel-about.bel-wrapper
-    .bel-info__info
-      h2.bel-title.__title
-        span.__text About us
-      p.bel-desc.__desc Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at vestibulum est. Maecenas elit turpis, dictum et purus maximus, posuere iaculis est. Nam id maximus sem. Donec tincidunt id nulla a aliquet. Suspendisse diam tellus, porta et cursus ut, laoreet et odio. Vivamus risus sem, imperdiet sit amet neque ut, imperdiet volutpat est. In luctus odio ligula, a luctus magna finibus at. Donec non ligula sit amet sem accumsan ullamcorper nec ac neque.
-        span.__text
-    .bel-media.__media
+    .bel-about-info__info
+      +genTitle('sec', 'bel-info', 'About us')
+      p.bel-desc.__desc
+        span.__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at vestibulum est. Maecenas elit turpis, dictum et purus maximus, posuere iaculis est. Nam id maximus sem. Donec tincidunt id nulla a aliquet. Suspendisse diam tellus, porta et cursus ut, laoreet et odio. Vivamus risus sem, imperdiet sit amet neque ut, imperdiet volutpat est. In luctus odio ligula, a luctus magna finibus at. Donec non ligula sit amet sem accumsan ullamcorper nec ac neque.
+    .bel-about-media.__media
       picture.__pic
-        img.__img
+        img.__img(src="" alt="")
       picture.__pic.--is-absoluted
-        img.__img
+        img.__img(src="" alt="")

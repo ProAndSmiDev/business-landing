@@ -1,15 +1,14 @@
 section#our-team
-  .bel-team.bel-wrapper
-    h2.bel-title.__title
-      span.__text Our team
-    ul.bel-list.__list
-      .__item
-        article.bel-teammate.__teammate
-          header.__header
-            picture.__pic
-              .__img
-            h3.bel-title.__title
-              span.__text Alexander Duma
-          p.bel-desc.__desc Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at vestibulum est. Maecenas elit turpis, dictum et purus maximus, posuere iaculis est. Nam id maximus sem.
-          footer.__footer
-            +genMenu('','bel-teammate','__blank')
+  .bel-team
+    .__wrapper.bel-wrapper
+      +genTitle('sec', 'bel-team', 'Our team')
+      ul.bel-team-list.__list
+        li.__item
+          article.bel-teammate.__teammate
+            header.__header
+              picture.__pic
+                img.__img(src="" alt="")
+              +genTitle('thd', 'bel-teammate', 'Alexander Duma')
+            p.bel-desc.__desc Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at vestibulum est. Maecenas elit turpis, dictum et purus maximus, posuere iaculis est. Nam id maximus sem.
+            footer.__footer
+              +genIconMenu('','bel-teammate','_blank')

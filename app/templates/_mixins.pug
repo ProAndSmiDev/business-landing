@@ -10,12 +10,39 @@ mixin genLink(file, rel)
 mixin genScript(file)
     script(src="/js/" + file + ".js")
 
-mixin genMenu(menu, parent, target)
+mixin genIconMenu(menu, parent, target)
   ul.bel-list(class=parent + '__list')
     for val in menu
       li.__item
         a.__link(href=val.url title=val.urlTitle target=target)
-          if menu === menuSocials
-            span.__icon(class='bel-list__icon--' + val.postfix)
-          else
+          span.__icon(class='bel-list__icon--' + val.postfix)
+
+
+mixin genMainMenu(menu, parent, isNav = false)
+  if isNav
+    nav.bel-menu(class=parent + '__menu')
+      ul.bel-list(class=parent + '__list')
+        for val in menu
+          li.__item
+            a.__link(href=val.url title=val.urlTitle)
+              span.__txt= val.title
+  else
+    ul.bel-list(class=parent + '__list')
+      for val in menu
+        li.__item
+          a.__link(href=val.url title=val.urlTitle)
             span.__txt= val.title
+
+mixin genTitle(type, parent, text, isInvert = false)
+  if type === 'main'
+    h1.bel-title(class=parent + '__title')
+      span.__text= text
+  else if type === 'sec'
+    h2.bel-title.--is-sec(class=parent + '__title')
+      span.__text= text
+  else if type === 'thd'
+    h3.bel-title.--is-thd(class=parent + '__title')
+      span.text= text
+  else
+    h4.bel-title.--is-other(class=parent + '__title')
+      span.text= text
