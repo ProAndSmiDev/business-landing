@@ -60,7 +60,7 @@ footer {
   flex: 0 0 auto;
 }
 
-.#{$main_wrapper} {
+.#{$prefix}-page {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -69,7 +69,7 @@ footer {
   margin-left: auto;
 }
 
-.bel-wrapper {
+.#{$prefix}-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;

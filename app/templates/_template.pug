@@ -1,3 +1,4 @@
+include _vars
 include _mixins
 doctype html
 html(lang="en")
@@ -10,34 +11,34 @@ html(lang="en")
         +genLink('favicon.ico', 'shortcut icon')
         +genLink('styles', 'stylesheet')
     body
-        .bel-landing
-            header.bel-header.__header
-              .__wrapper.bel-wrapper
+        div(class=prefix + '-page')
+            header.__header(class=prefix + '-header')
+              .__wrapper(class=prefix + '-wrapper')
                 include ../components/logo/Index
-                +genMainMenu(menuBlocks, 'bel-header', true)
+                +genMainMenu(menuBlocks, 'bl-header', true)
 
-            main.bel-main.__main
+            main.__main(class=prefix + '-main')
               block Main
 
-            footer.bel-footer.__footer
-              .__wrapper.bel-wrapper
+            footer.__footer(class=prefix + '-footer')
+              .__wrapper(class=prefix + '-wrapper')
                 .__upper
-                  .bel-links.__links
+                  .__links(class=prefix + '-links')
                     +genTitle('', 'bel-links', 'Site links')
                     +genMainMenu(menuBlocks, 'bel-links', true)
-                  .bel-subscribe.__subscribe
-                    +genTitle('', 'bel-subscribe', 'Subscribe')
-                    form.bel-subscribe-form.__form
+                  .__subscribe(class=prefix + '-subscribe')
+                    +genTitle('', 'bl-subscribe', 'Subscribe')
+                    form.__form(class=prefix + '-subscribe-form')
                       input.__email
                       button.__submit
-                  .bel-info.__info
-                    +genTitle('', 'bel-info', 'Contact')
+                  .__info(class=prefix + '-info')
+                    +genTitle('', 'bl-info', 'Contact')
                     .__text 624 Green Ave, Suite 123 New York, CA 84104
                     +genIconMenu(menuSocials, 'bel-info', '_blank')
 
                 .__lower
-                  .bel-copyright.__copyright © 2018 Company. Tagline lorem ipsum dolor sit amet, consectetur adipiscing eiusmod
-                  +genMainMenu(menuPolicy, 'bel-footer')
+                  .__copyright(class=prefix + '-copyright') © 2018 Company. Tagline lorem ipsum dolor sit amet, consectetur adipiscing eiusmod
+                  +genMainMenu(menuPolicy, 'bl-footer')
 
         +genScript('libs.min')
         +genScript('app.min')

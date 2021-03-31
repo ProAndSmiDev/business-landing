@@ -11,7 +11,7 @@ mixin genScript(file)
     script(src="/js/" + file + ".js")
 
 mixin genIconMenu(menu, parent, target)
-  ul.bel-list(class=parent + '__list')
+  ul(class=prefix + '-list ' + parent + '__list')
     for val in menu
       li.__item
         a.__link(href=val.url title=val.urlTitle target=target)
@@ -20,14 +20,14 @@ mixin genIconMenu(menu, parent, target)
 
 mixin genMainMenu(menu, parent, isNav = false)
   if isNav
-    nav.bel-menu(class=parent + '__menu')
-      ul.bel-list(class=parent + '__list')
+    nav(class=prefix + '-menu ' + parent + '__menu')
+      ul(class=prefix + '-list ' + parent + '__list')
         for val in menu
           li.__item
             a.__link(href=val.url title=val.urlTitle)
               span.__txt= val.title
   else
-    ul.bel-list(class=parent + '__list')
+    ul(class=prefix + '-list ' + parent + '__list')
       for val in menu
         li.__item
           a.__link(href=val.url title=val.urlTitle)
@@ -35,14 +35,14 @@ mixin genMainMenu(menu, parent, isNav = false)
 
 mixin genTitle(type, parent, text, isInvert = false)
   if type === 'main'
-    h1.bel-title(class=parent + '__title')
+    h1(class=prefix + '-title ' + parent + '__title')
       span.__text= text
   else if type === 'sec'
-    h2.bel-title.--is-sec(class=parent + '__title')
+    h2.--is-sec(class=prefix + '-title ' + parent + '__title')
       span.__text= text
   else if type === 'thd'
-    h3.bel-title.--is-thd(class=parent + '__title')
+    h3.--is-thd(class=prefix + '-title ' + parent + '__title')
       span.text= text
   else
-    h4.bel-title.--is-other(class=parent + '__title')
+    h4.--is-other(class=prefix + '-title ' + parent + '__title')
       span.text= text

@@ -1,14 +1,14 @@
 section#our-team
-  .bel-team
-    .__wrapper.bel-wrapper
-      +genTitle('sec', 'bel-team', 'Our team')
-      ul.bel-team-list.__list
+  div(class=prefix + '-team')
+    .__wrapper(class=prefix + '-wrapper')
+      +genTitle('sec', 'bl-team', 'Our team')
+      ul.__list(class=prefix + '-team-list')
         li.__item
-          article.bel-teammate.__teammate
+          article.__teammate(class=prefix + '-teammate')
             header.__header
               picture.__pic
                 img.__img(src="" alt="")
-              +genTitle('thd', 'bel-teammate', 'Alexander Duma')
-            p.bel-desc.__desc Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at vestibulum est. Maecenas elit turpis, dictum et purus maximus, posuere iaculis est. Nam id maximus sem.
+              +genTitle('thd', 'bl-teammate', 'Alexander Duma')
+            p.__desc(class=prefix + '-desc') Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at vestibulum est. Maecenas elit turpis, dictum et purus maximus, posuere iaculis est. Nam id maximus sem.
             footer.__footer
               +genIconMenu('','bel-teammate','_blank')
