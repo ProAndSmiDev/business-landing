@@ -12,33 +12,34 @@ html(lang="en")
         +genLink('styles', 'stylesheet')
     body
         div(class=prefix + '-page')
-            header.__header(class=prefix + '-header')
-              .__wrapper(class=prefix + '-wrapper')
+            header(class=prefix + '-header ' + prefix + '-page__header')
+              div(class=prefix + '-wrapper ' + prefix + '-header__wrapper')
                 include ../components/logo/Index
-                +genMainMenu(menuBlocks, 'bl-header', true)
+                +genMainMenu(menuBlocks, prefix + '-header', true)
 
-            main.__main(class=prefix + '-main')
+            main(class=prefix + '-main ' + prefix + '-page__main')
               block Main
 
-            footer.__footer(class=prefix + '-footer')
-              .__wrapper(class=prefix + '-wrapper')
-                .__upper
-                  .__links(class=prefix + '-links')
-                    +genTitle('', 'bel-links', 'Site links')
-                    +genMainMenu(menuBlocks, 'bel-links', true)
-                  .__subscribe(class=prefix + '-subscribe')
-                    +genTitle('', 'bl-subscribe', 'Subscribe')
-                    form.__form(class=prefix + '-subscribe-form')
-                      input.__email
-                      button.__submit
-                  .__info(class=prefix + '-info')
-                    +genTitle('', 'bl-info', 'Contact')
-                    .__text 624 Green Ave, Suite 123 New York, CA 84104
-                    +genIconMenu(menuSocials, 'bel-info', '_blank')
+            footer(class=prefix + '-footer ' + prefix + '-page__footer')
+              div(class=prefix + '-wrapper ' + prefix + '-footer__wrapper')
+                div(class=prefix + '-footer__upper')
+                  div(class=prefix + '-links ' + prefix + '-footer__links')
+                    +genTitle('', prefix + '-links', 'Site links')
+                    +genMainMenu(menuBlocks, prefix + '-links', true)
+                  div(class=prefix + '-subscribe ' + prefix + '-footer__subscribe')
+                    +genTitle('', prefix + '-subscribe', 'Subscribe')
+                    form(class=prefix + '-subscribe-form ' + prefix + '-subscribe__form')
+                      input(class=prefix + '-subscribe-form__email')
+                      button(class=prefix + '-subscribe-form__submit')
+                  div(class=prefix + '-info ' + prefix + '-footer__info')
+                    +genTitle('', prefix + '-info', 'Contact')
+                    div(class=prefix + '-info__text') 624 Green Ave, Suite 123 New York, CA 84104
+                    +genIconMenu(menuSocials, prefix + '-info', '_blank')
 
-                .__lower
-                  .__copyright(class=prefix + '-copyright') © 2018 Company. Tagline lorem ipsum dolor sit amet, consectetur adipiscing eiusmod
-                  +genMainMenu(menuPolicy, 'bl-footer')
+                div(class=prefix + '-footer__lower')
+                  p(class=prefix + '-copyright ' + prefix + '-footer__copyright')
+                    span(class=prefix + '-copyright__text') © 2018 Company. Tagline lorem ipsum dolor sit amet, consectetur adipiscing eiusmod
+                  +genMainMenu(menuPolicy, prefix + '-footer')
 
         +genScript('libs.min')
         +genScript('app.min')

@@ -13,36 +13,36 @@ mixin genScript(file)
 mixin genIconMenu(menu, parent, target)
   ul(class=prefix + '-list ' + parent + '__list')
     for val in menu
-      li.__item
-        a.__link(href=val.url title=val.urlTitle target=target)
-          span.__icon(class='bel-list__icon--' + val.postfix)
+      li(class=prefix + '-list__item')
+        a(href=val.url title=val.urlTitle target=target class=prefix + '-list__link')
+          span(class=prefix + '-list__icon ' + prefix + '-list__icon--' + val.postfix)
 
 
 mixin genMainMenu(menu, parent, isNav = false)
   if isNav
     nav(class=prefix + '-menu ' + parent + '__menu')
-      ul(class=prefix + '-list ' + parent + '__list')
+      ul(class=prefix + '-menu-list ' + parent + '-menu__list')
         for val in menu
-          li.__item
-            a.__link(href=val.url title=val.urlTitle)
-              span.__txt= val.title
+          li(class=prefix + '-menu-list__item')
+            a(href=val.url title=val.urlTitle class=prefix + '-menu-list__link')
+              span(class=prefix + '-menu-list__text')= val.title
   else
-    ul(class=prefix + '-list ' + parent + '__list')
+    ul(class=prefix + '-menu-list ' + parent + '__list')
       for val in menu
-        li.__item
-          a.__link(href=val.url title=val.urlTitle)
-            span.__txt= val.title
+        li(class=prefix + '-menu-list__item')
+          a(href=val.url title=val.urlTitle class=prefix + '-menu-list__link')
+            span(class=prefix + '-menu-list__text')= val.title
 
 mixin genTitle(type, parent, text, isInvert = false)
   if type === 'main'
     h1(class=prefix + '-title ' + parent + '__title')
-      span.__text= text
+      span(class=prefix + '-title__text')= text
   else if type === 'sec'
-    h2.--is-sec(class=prefix + '-title ' + parent + '__title')
-      span.__text= text
+    h2(class=prefix + '-title ' + parent + '__title ' + parent + '__title--is-sec')
+      span(class=prefix + '-title__text')= text
   else if type === 'thd'
-    h3.--is-thd(class=prefix + '-title ' + parent + '__title')
-      span.text= text
+    h3(class=prefix + '-title ' + parent + '__title ' + parent + '__title--is-thd')
+      span(class=prefix + '-title__text')= text
   else
-    h4.--is-other(class=prefix + '-title ' + parent + '__title')
-      span.text= text
+    h4(class=prefix + '-title ' + parent + '__title ' + parent + '__title--is-other')
+      span(class=prefix + '-title__text')= text

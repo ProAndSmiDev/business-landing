@@ -1,3 +1,3 @@
-a.bel-logo.__logo(href=company.logo.url title=company.logo.urlTitle)
-  picture.__pic
-    img.__img(src='/img/' + company.logo.fileName alt=company.logo.alt)
+a(href=company.logo.url title=company.logo.urlTitle class=prefix + '-logo ' + prefix + '-header__logo')
+  picture(class=prefix + '-logo__pic')
+    img(src='/img/' + company.logo.fileName alt=company.logo.alt class=prefix + '-logo__img')
