@@ -1,14 +1,14 @@
 mixin genMeta(name, content)
-    meta(name=name content=content)
+  meta(name=name content=content)
 
 mixin genLink(file, rel)
-    if(rel === 'shortcut icon')
-        link(href='/img/' + file, rel=rel)
-    else if(rel === 'stylesheet')
-        link(href='/css/' + file + '.css', rel=rel)
+  if(rel === 'shortcut icon')
+    link(href='/img/' + file, rel=rel)
+  else if(rel === 'stylesheet')
+    link(href='/css/' + file + '.css', rel=rel)
 
 mixin genScript(file)
-    script(src="/js/" + file + ".js")
+  script(src="/js/" + file + ".js")
 
 mixin genIconMenu(menu, parent, target)
   ul(class=prefix + '-list ' + parent + '__list')
