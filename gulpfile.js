@@ -8,7 +8,6 @@ const { dest, parallel, watch, series, src } = require('gulp'),
       fs = require('fs'),
       data = require('gulp-data'),
       pug = require('gulp-pug'),
-      pugbem = require('gulp-pugbem'),
       concat = require('gulp-concat'),
       uglES = require('gulp-uglify-es').default,
       svg = require('gulp-svg-sprite'),
@@ -111,7 +110,6 @@ const pug2html = () => {
     .pipe(pug({
       pretty: !isProd,
       locals: root.data,
-      plugins: [pugbem],
     }))
     .pipe(sync.stream())
     .pipe(dest(root.prod));

@@ -1,0 +1,9 @@
+div(class=prefix + '-wrapper ' + prefix + '-footer__wrapper')
+  div(class=prefix + '-footer__upper')
+    include ./FooterMenu
+    include ./SubscribeForm
+    include ./Contacts
+
+  div(class=prefix + '-footer__lower')
+    include ./Copyright
+    +genMainMenu(menuPolicy, prefix + '-footer')

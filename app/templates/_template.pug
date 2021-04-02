@@ -13,33 +13,13 @@ html(lang="en")
     body
         div(class=prefix + '-page')
             header(class=prefix + '-header ' + prefix + '-page__header')
-              div(class=prefix + '-wrapper ' + prefix + '-header__wrapper')
-                include ../components/logo/Index
-                +genMainMenu(menuBlocks, prefix + '-header', true)
+              include ../components/header/Index
 
             main(class=prefix + '-main ' + prefix + '-page__main')
               block Main
 
             footer(class=prefix + '-footer ' + prefix + '-page__footer')
-              div(class=prefix + '-wrapper ' + prefix + '-footer__wrapper')
-                div(class=prefix + '-footer__upper')
-                  div(class=prefix + '-links ' + prefix + '-footer__links')
-                    +genTitle('', prefix + '-links', 'Site links')
-                    +genMainMenu(menuBlocks, prefix + '-links', true)
-                  div(class=prefix + '-subscribe ' + prefix + '-footer__subscribe')
-                    +genTitle('', prefix + '-subscribe', 'Subscribe')
-                    form(class=prefix + '-subscribe-form ' + prefix + '-subscribe__form')
-                      input(class=prefix + '-subscribe-form__email')
-                      button(class=prefix + '-subscribe-form__submit')
-                  div(class=prefix + '-info ' + prefix + '-footer__info')
-                    +genTitle('', prefix + '-info', 'Contact')
-                    div(class=prefix + '-info__text') 624 Green Ave, Suite 123 New York, CA 84104
-                    +genIconMenu(menuSocials, prefix + '-info', '_blank')
-
-                div(class=prefix + '-footer__lower')
-                  p(class=prefix + '-copyright ' + prefix + '-footer__copyright')
-                    span(class=prefix + '-copyright__text') © 2018 Company. Tagline lorem ipsum dolor sit amet, consectetur adipiscing eiusmod
-                  +genMainMenu(menuPolicy, prefix + '-footer')
+              include ../components/footer/Index
 
         +genScript('libs.min')
         +genScript('app.min')
