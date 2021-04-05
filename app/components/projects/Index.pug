@@ -1,0 +1,10 @@
+section#projects
+  div(class=prefix + '-projects')
+    div(class=prefix + '-projects__wrapper ' + prefix + '-wrapper' )
+      +genTitle('sec', prefix + '-projects', 'Projects')
+      +genTitle('thd', prefix + '-projects', 'Lorem ipsum dolor sit amet')
+
+      p(class=prefix + '-projects-desc ' + prefix + 'projects__desc')
+        span(class=prefix + '-projects-desc__text') Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at vestibulum est. Maecenas elit turpis, dictum et purus maximus, posuere iaculis est. Nam id maximus sem.
+
+      include ./ProjectsSlider
