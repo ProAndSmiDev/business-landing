@@ -124,6 +124,7 @@ const svg2sprite = () => {
         stack: {
           sprite: "../sprite.svg"
         },
+        symbol: true,
         padding: 0
       }
     }))
