@@ -46,3 +46,15 @@ mixin genTitle(type, parent, text, isInvert = false)
   else
     h4(class=prefix + '-title ' + parent + '__title ' + parent + '__title--is-other')
       span(class=prefix + '-title__text')= text
+
+mixin genInput(type='', name='', title='', isChecked=false, isRequired=true, parent='contacts-form')
+    fieldset(class=prefix + '-' + parent + '-field ' + prefix + '-' + parent + '__field')
+      if isChecked
+        div(class=prefix + '-' + parent + '-field-checkbox ' + prefix + '-' + parent + '-field__checkbox')
+          span(class=prefix + '-' + parent + '-field-checkbox__text')
+      label(for=name class=prefix + '-' + parent + '-field-title ' + prefix + '-' + parent + '-field__title')
+          span(class=prefix + '-' + parent + '-field-title__text')!= title
+      if type !== 'textarea'
+        input(id=name class=prefix + '-' + parent + '-field__input' type=type name=name required=(isRequired) hidden=(isChecked))
+      else
+        textarea(id=name class=prefix + '-' + parent + '-field__textarea' name=name required)

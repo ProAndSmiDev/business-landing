@@ -1,6 +1,10 @@
 form(class=prefix + '-contacts-form ' + prefix + '-contacts__form')
-    fieldset(class=prefix + '-contacts-form-field ' + prefix + '-contacts-form__field')
-        label(for='userNameInput' class=prefix + '-contacts-form-field-title ' + prefix + '-contacts-form-field__title')
-            span(class=prefix + '-contacts-form-field-title__text') Username:
-        input#userNameInput(class=prefix + '-contacts-form-field__input' type='text' name='userName' required)
-        
+    +genInput('text', 'userNameInput', 'Your name')
+    +genInput('email', 'userEmailInput', 'Your email')
+    +genInput('text', 'userSubjectInput', 'Your subject')
+    +genInput('textarea', 'userTextArea', 'Your comments')
+    +genInput('checkbox', 'userCheckInput', 'I agree with <a href="#">terms and conditions</a>', true)
+
+    button(type='submit' class=prefix + '-contacts-form-submit ' + prefix + '-contacts-form__submit')
+        span(class=prefix + '-contacts-form-submit__text') Send
+
