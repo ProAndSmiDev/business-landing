@@ -4,3 +4,4 @@ docs
 .stylelintrc.json
 .editorconfig
 stylelint-config.js
+.vscode
