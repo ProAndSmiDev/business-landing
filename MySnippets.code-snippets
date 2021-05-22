@@ -1,0 +1,16 @@
+{
+  {
+    "px2em": {
+      "scope": "scss",
+      "prefix": "@em",
+      "body": "em($1, \\$fz);$0",
+      "description": "Transfer pixel values to em values"
+    },
+    "px2emBase": {
+      "scope": "scss",
+      "prefix": "@emb",
+      "body": "\\$fz: $1;\nfont-size: em(\\$fz, \\$fz_base);$0",
+      "description": "Transfer pixeled font-size to em value"
+    }
+  }
+}
