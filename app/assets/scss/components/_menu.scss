@@ -1,0 +1,24 @@
+.#{$prefix}-menu {
+  display: flex;
+}
+
+.#{$prefix}-menu-list {
+  display: flex;
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: em(15, $fz);
+    }
+  }
+}
+
+.#{$prefix}-menu-list-link {
+  letter-spacing: em(0.15, $fz);
+
+  &__text {
+    $fz: 18;
+    font-size: em($fz, $fz_base);
+    font-weight: 500;
+    color: $secondary;
+  }
+}

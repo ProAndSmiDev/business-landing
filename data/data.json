@@ -1,7 +1,7 @@
 {
   "company": {
     "logo": {
-      "fileName": "logo.svg",
+      "fileName": "logo",
       "alt": "Company's logo",
       "url": "#",
       "urlTitle": "Linked logo"

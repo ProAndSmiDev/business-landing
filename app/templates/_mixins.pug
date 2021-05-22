@@ -24,14 +24,14 @@ mixin genMainMenu(menu, parent, isNav = false)
       ul(class=prefix + '-menu-list ' + parent + '-menu__list')
         for val in menu
           li(class=prefix + '-menu-list__item')
-            a(href=val.url title=val.urlTitle class=prefix + '-menu-list__link')
-              span(class=prefix + '-menu-list__text')= val.title
+            a(href=val.url title=val.urlTitle class=prefix + '-menu-list-link ' + prefix + '-menu-list__link')
+              span(class=prefix + '-menu-list-link__text')= val.title
   else
     ul(class=prefix + '-menu-list ' + parent + '__list')
       for val in menu
         li(class=prefix + '-menu-list__item')
-          a(href=val.url title=val.urlTitle class=prefix + '-menu-list__link')
-            span(class=prefix + '-menu-list__text')= val.title
+          a(href=val.url title=val.urlTitle class=prefix + '-menu-list-link ' + prefix + '-menu-list__link')
+            span(class=prefix + '-menu-list-link__text')= val.title
 
 mixin genTitle(type, parent, text, isInvert = false)
   if type === 'main'
