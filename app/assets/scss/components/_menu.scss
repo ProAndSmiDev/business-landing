@@ -1,22 +1,23 @@
 .#{$prefix}-menu {
   display: flex;
+  position: relative;
+
+  header &__line {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: em(2, $fz);
+    background-color: $primary;
+    transition: left 0.3s ease-in-out;
+  }
 }
 
 .#{$prefix}-menu-list {
   $self: &;
   display: flex;
   position: relative;
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 30px;
-    height: em(2, $fz);
-    background-color: $primary;
-    transition: left 0.3s ease-in;
-  }
 
   &__item {
     &:nth-child(2) {

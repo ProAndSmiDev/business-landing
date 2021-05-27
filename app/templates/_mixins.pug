@@ -21,6 +21,7 @@ mixin genIconMenu(menu, parent, target)
 mixin genMainMenu(menu, parent, isNav = false)
   if isNav
     nav(class=prefix + '-menu ' + parent + '__menu')
+      span(class=prefix + '-menu__line')
       ul(class=prefix + '-menu-list ' + parent + '-menu__list')
         for val in menu
           li(class=prefix + '-menu-list__item')

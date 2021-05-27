@@ -1,49 +1,50 @@
 const { dest, parallel, watch, series, src } = require('gulp'),
-      sass = require('gulp-sass'),
-      notify = require('gulp-notify'),
-      rename = require('gulp-rename'),
-      prefix = require('gulp-autoprefixer'),
-      sourcemaps = require('gulp-sourcemaps'),
-      sync = require('browser-sync').create(),
-      fs = require('fs'),
-      data = require('gulp-data'),
-      pug = require('gulp-pug'),
-      concat = require('gulp-concat'),
-      uglES = require('gulp-uglify-es').default,
-      svg = require('gulp-svg-sprite'),
-      imgMin = require('gulp-imagemin'),
-      pngQuant = require('imagemin-pngquant'),
-      ttf2woff2 = require('gulp-ttf2woff2'),
-      browserify = require('gulp-bro'),
-      babelify = require('babelify'),
-      isProd = (process.env.NODE_ENV === 'prod'),
-      root = {
-        dev: './app/',
-        prod: './docs/',
-        libs: './libs/',
-        data: './data/data.json'
-      },
-      dev = {
-        scss: root.dev + 'assets/scss/main.scss',
-        fonts: root.dev + 'assets/fonts/**/*.ttf',
-        media: root.dev + 'assets/img/**/*.{png, jpg, jpeg}',
-        svg: root.dev + 'assets/svg/**/*.svg',
-        pug: root.dev + 'views/**/*.pug',
-        es: root.dev + 'assets/es/*.js',
-        libs: root.libs + 'all.js',
-      },
-      prod = {
-        css: root.prod + 'css/',
-        media: root.prod + 'img/',
-        js: root.prod + 'js/',
-        fonts: root.prod + 'fonts/',
-      };
+sass = require('gulp-sass'),
+notify = require('gulp-notify'),
+rename = require('gulp-rename'),
+prefix = require('gulp-autoprefixer'),
+sourcemaps = require('gulp-sourcemaps'),
+sync = require('browser-sync').create(),
+fs = require('fs'),
+data = require('gulp-data'),
+pug = require('gulp-pug'),
+concat = require('gulp-concat'),
+uglES = require('gulp-uglify-es').default,
+svg = require('gulp-svg-sprite'),
+imgMin = require('gulp-imagemin'),
+pngQuant = require('imagemin-pngquant'),
+ttf2woff2 = require('gulp-ttf2woff2'),
+browserify = require('gulp-bro'),
+babelify = require('babelify'),
+isProd = (process.env.NODE_ENV === 'prod'),
+root = {
+  dev: './app/',
+  prod: './docs/',
+  libs: './libs/',
+  data: './data/data.json'
+},
+dev = {
+  scss: root.dev + 'assets/scss/main.scss',
+  fonts: root.dev + 'assets/fonts/**/*.ttf',
+  media: root.dev + 'assets/img/**/*.{png, jpg, jpeg}',
+  svg: root.dev + 'assets/svg/**/*.svg',
+  pug: root.dev + 'views/**/*.pug',
+  es: root.dev + 'assets/es/*.js',
+  libs: root.libs + 'all.js',
+  helpers: root.dev + 'helpers/all.js',
+},
+prod = {
+  css: root.prod + 'css/',
+  media: root.prod + 'img/',
+  js: root.prod + 'js/',
+  fonts: root.prod + 'fonts/',
+};
 
 /* Работа со стилями */
 const stylesMin = () => {
   let stylesGen = '';
 
-  if(!isProd) {
+  if (!isProd) {
     stylesGen = src(dev.scss)
       .pipe(sourcemaps.init())
       .pipe(sass({
@@ -53,7 +54,7 @@ const stylesMin = () => {
         '> 1%',
         'ie 8',
         'ie 7',
-        'last 15 versions'
+        'last 15 versions',
       ]))
       .pipe(rename({
         basename: 'styles',
@@ -69,12 +70,12 @@ const stylesMin = () => {
         '> 1%',
         'ie 8',
         'ie 7',
-        'last 15 versions'
+        'last 15 versions',
       ]))
       .pipe(rename({
         basename: 'styles',
         suffix: '.min',
-      }))
+      }));
   }
 
   return stylesGen.pipe(dest(prod.css));
@@ -96,8 +97,8 @@ const getModules = () => {
 
 /* Работа со скриптами */
 const esMin = series([getModules], () => {
-  return src(dev.es)
-    .pipe(rename('app.min.js'))
+  return src([dev.helpers, dev.es])
+    .pipe(concat('app.min.js'))
     .pipe(uglES())
     .pipe(dest(prod.js));
 });
@@ -122,11 +123,11 @@ const svg2sprite = () => {
     .pipe(svg({
       mode: {
         stack: {
-          sprite: "../sprite.svg"
+          sprite: "../sprite.svg",
         },
         symbol: true,
-        padding: 0
-      }
+        padding: 0,
+      },
     }))
     .pipe(sync.stream())
     .pipe(dest(prod.media));
@@ -161,9 +162,9 @@ const fonts = () => {
 const watchFiles = () => {
   sync.init({
     server: {
-      baseDir: root.prod
+      baseDir: root.prod,
     },
-    notify: false
+    notify: false,
   });
 
   watch(dev.fonts, fonts);
@@ -187,4 +188,3 @@ const buildProd = parallel([
 exports.build = buildProd;
 exports.default = watchFiles;
 /* Таски проекта */
-
