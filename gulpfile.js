@@ -170,7 +170,7 @@ const watchFiles = () => {
   watch(dev.fonts, fonts);
   watch(dev.svg, svg2sprite);
   watch(dev.media, imgOpt);
-  watch([dev.es, dev.libs], esMin);
+  watch([dev.es, dev.libs, dev.helpers], esMin);
   watch([root.dev + 'assets/scss/**/*.scss', root.dev + 'components/**/*.scss'], stylesMin);
   watch([root.data, root.dev + '**/*.pug'], pug2html);
 };

@@ -29,13 +29,17 @@
     }
 
     &:not(:last-child) {
-      margin-right: em(15, $fz);
+      padding-right: em(15, $fz);
     }
   }
 }
 
 .#{$prefix}-menu-list-link {
   letter-spacing: em(0.15, $fz);
+
+  &:hover {
+    opacity: 1;
+  }
 
   &__text {
     $fz: 18;
