@@ -1,37 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
   const clientSize = window.screen.width;
-  const allLinks = document.querySelectorAll('a[href^="#"]');
-  const headerEl = document.querySelector('header');
-  const isFixedHeader = headerEl.classList.contains(`${prefix.slice(1)}-header--is-fixed`);
-  const isStickyHeader = headerEl.classList.contains(`${prefix.slice(1)}-header--is-sticky`);
-  const headerHeight = headerEl.offsetHeight;
-  const mainBlock = document.querySelector(`${prefix}-page__main`);
-  const topOffset = (isFixedHeader || isStickyHeader) ? headerHeight : 0;
-
-  mainBlock.style.marginTop = `${headerHeight}px`;
-
-  for (let i = 0; i < allLinks.length; i++) {
-    allLinks[i].addEventListener('click', (e) => {
-      e.preventDefault();
-
-      const blockID = allLinks[i].getAttribute('href');
-      if (blockID !== '#') {
-        const blockByID = document.querySelector(blockID);
-        const blockByIDPos = blockByID.getBoundingClientRect().top;
-        const blockByIDOffsetPos = blockByIDPos - topOffset;
-
-        window.scrollBy({
-          top: blockByIDOffsetPos,
-          behavior: 'smooth',
-        });
-      } else {
-        document.body.scrollIntoView({
-          block: 'start',
-          behavior: 'smooth',
-        });
-      }
-    });
-  }
 
   if (clientSize >= 1024) {
     const menuLine = document.querySelector(`${prefix}-menu__line`);
