@@ -5,6 +5,17 @@
   font: inherit;
 }
 
+section {
+  height: 100vh;
+}
+
+.#{$prefix}-header {
+  &--is-fixed {
+    position: fixed;
+    width: 100%;
+  }
+}
+
 body {
   font: #{$fz_base}px/1.5 'Arial', 'Roboto', sans-serif;
 }

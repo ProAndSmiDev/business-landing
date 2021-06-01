@@ -26,7 +26,7 @@
     {
       "title": "Team",
       "urlTitle": "Go to section Team",
-      "url": "#team"
+      "url": "#our-team"
     },
     {
       "title": "Projects",
@@ -34,9 +34,9 @@
       "url": "#projects"
     },
     {
-      "title": "Contact",
+      "title": "Contacts",
       "urlTitle": "Go to section Contact",
-      "url": "#contact"
+      "url": "#contacts"
     }
   ],
   "menuSocials": [
