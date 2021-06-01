@@ -1,11 +1,11 @@
 section#contacts
-  div(class=prefix + '-contacts')
-    div(class=prefix + '-contacts__wrapper ' + prefix + '-wrapper' )
-        +genTitle('sec', prefix + '-contacts', 'Contacts')
-        +genTitle('thd', prefix + '-contacts', 'Lorem ipsum dolor sit amet')
+  div(class=`${prefix}-contacts`)
+    div(class=`${prefix}-contacts__wrapper ${prefix}-wrapper`)
+        +genTitle('sec', `${prefix}-contacts`, 'Contacts')
+        +genTitle('thd', `${prefix}-contacts`, 'Lorem ipsum dolor sit amet')
 
-        p(class=prefix + '-contacts-desc ' + prefix + '-contacts__desc')
-            span(class=prefix + '-contacts-desc__text') Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at vestibulum est. Maecenas elit turpis, dictum et purus maximus, posuere iaculis est. Nam id maximus sem. 
+        p(class=`${prefix}-contacts-desc ${prefix}-contacts__desc`)
+            span(class=`${prefix}-contacts-desc__text`) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at vestibulum est. Maecenas elit turpis, dictum et purus maximus, posuere iaculis est. Nam id maximus sem.
 
-        div(class=prefix + '-contacts-bg ' + prefix + '-contacts__bg ' + prefix + '-contacts__bg--is-dark')
+        div(class=`${prefix}-contacts-bg ${prefix}-contacts__bg ${prefix}-contacts__bg--is-dark`)
             include ./components/ContactsForm

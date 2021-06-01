@@ -1,10 +1,9 @@
-form(class=prefix + '-contacts-form ' + prefix + '-contacts__form')
+form(class=`${prefix}-contacts-form ${prefix}-contacts__form`)
     +genInput('text', 'userNameInput', 'Your name')
     +genInput('email', 'userEmailInput', 'Your email')
     +genInput('text', 'userSubjectInput', 'Your subject')
     +genInput('textarea', 'userTextArea', 'Your comments')
     +genInput('checkbox', 'userCheckInput', 'I agree with <a href="#">terms and conditions</a>', true)
 
-    button(type='submit' class=prefix + '-contacts-form-submit ' + prefix + '-contacts-form__submit')
-        span(class=prefix + '-contacts-form-submit__text') Send
-
+    button(type='submit' class=`${prefix}-contacts-form-submit ${prefix}-contacts-form__submit`)
+        span(class=`${prefix}-contacts-form-submit__text`) Send

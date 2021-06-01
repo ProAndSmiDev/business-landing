@@ -11,51 +11,53 @@ mixin genScript(file)
   script(src="/js/" + file + ".js")
 
 mixin genIconMenu(menu, parent, target)
-  ul(class=prefix + '-list ' + parent + '__list')
+  ul(class=`${prefix}-list ${parent}__list`)
     for val in menu
-      li(class=prefix + '-list__item')
-        a(href=val.url title=val.urlTitle target=target class=prefix + '-list__link')
-          span(class=prefix + '-list__icon ' + prefix + '-list__icon--' + val.postfix)
+      li(class=`${prefix}-list__item`)
+        a(href=val.url title=val.urlTitle target=target class=`${prefix}-list__link`)
+          span(class=`${prefix}-list__icon ${prefix}-list__icon--${val.postfix}`)
 
 
-mixin genMainMenu(menu, parent, isNav = false)
+mixin genMainMenu(menu, parent, isNav = false, isHeader = false)
   if isNav
-    nav(class=prefix + '-menu ' + parent + '__menu')
-      span(class=prefix + '-menu__line')
-      ul(class=prefix + '-menu-list ' + parent + '-menu__list')
+    nav(class=`${prefix}-menu ${parent}__menu`)
+      span(class=`${prefix}-menu__line`)
+      button(class=`${prefix}-menu-burger ${prefix}-menu__burger`)
+        span(class=`${prefix}-menu-burger__icon`)
+      ul(class=`${prefix}-menu-list ${parent}-menu__list`)
         for val in menu
-          li(class=prefix + '-menu-list__item')
-            a(href=val.url title=val.urlTitle class=prefix + '-menu-list-link ' + prefix + '-menu-list__link')
-              span(class=prefix + '-menu-list-link__text')= val.title
+          li(class=`${prefix}-menu-list__item`)
+            a(href=val.url title=val.urlTitle class=`${prefix}-menu-list-link ${prefix}-menu-list__link`)
+              span(class=`${prefix}-menu-list-link__text`)= val.title
   else
-    ul(class=prefix + '-menu-list ' + parent + '__list')
+    ul(class=`${prefix}-menu-list ${parent}__list`)
       for val in menu
-        li(class=prefix + '-menu-list__item')
-          a(href=val.url title=val.urlTitle class=prefix + '-menu-list-link ' + prefix + '-menu-list__link')
-            span(class=prefix + '-menu-list-link__text')= val.title
+        li(class=`${prefix}-menu-list__item`)
+          a(href=val.url title=val.urlTitle class=`${prefix}-menu-list-link ${prefix}-menu-list__link`)
+            span(class=`${prefix}-menu-list-link__text`)= val.title
 
 mixin genTitle(type, parent, text, isInvert = false)
   if type === 'main'
-    h1(class=prefix + '-title ' + parent + '__title')
-      span(class=prefix + '-title__text')= text
+    h1(class=`${prefix}-title ${parent}__title`)
+      span(class=`${prefix}-title__text`)= text
   else if type === 'sec'
-    h2(class=prefix + '-title ' + parent + '__title ' + parent + '__title--is-sec')
-      span(class=prefix + '-title__text')= text
+    h2(class=`${prefix}-title ${parent}__title ${parent}__title--is-sec`)
+      span(class=`${prefix}-title__text`)= text
   else if type === 'thd'
-    h3(class=prefix + '-title ' + parent + '__title ' + parent + '__title--is-thd')
-      span(class=prefix + '-title__text')= text
+    h3(class=`${prefix}-title ${parent}__title ${parent}__title--is-thd`)
+      span(class=`${prefix}-title__text`)= text
   else
-    h4(class=prefix + '-title ' + parent + '__title ' + parent + '__title--is-other')
-      span(class=prefix + '-title__text')= text
+    h4(class=`${prefix}-title ${parent}__title ${parent}__title--is-other`)
+      span(class=`${prefix}-title__text`)= text
 
-mixin genInput(type='', name='', title='', isChecked=false, isRequired=true, parent='contacts-form')
-    fieldset(class=prefix + '-' + parent + '-field ' + prefix + '-' + parent + '__field')
+mixin genInput(type='', name='', title='', isChecked=false, isRequired=true, parent=`${prefix}-contacts-form`)
+    fieldset(class=`${parent}-field ${parent}__field`)
       if isChecked
-        div(class=prefix + '-' + parent + '-field-checkbox ' + prefix + '-' + parent + '-field__checkbox')
-          span(class=prefix + '-' + parent + '-field-checkbox__text')
-      label(for=name class=prefix + '-' + parent + '-field-title ' + prefix + '-' + parent + '-field__title')
-          span(class=prefix + '-' + parent + '-field-title__text')!= title
+        div(class=`${parent}-field-checkbox ${parent}-field__checkbox'`)
+          span(class=`${parent}-field-checkbox__text`)
+      label(for=name class=`${parent}-field-title ${parent}-field__title`)
+          span(class=`${parent}-field-title__text`)!= title
       if type !== 'textarea'
-        input(id=name class=prefix + '-' + parent + '-field__input' type=type name=name required=(isRequired) hidden=(isChecked))
+        input(id=name class=`${parent}-field__input` type=`${type}` name=`${name}` required=`${isRequired}` hidden=`${isChecked}`)
       else
-        textarea(id=name class=prefix + '-' + parent + '-field__textarea' name=name required)
+        textarea(id=`${name}` class=`${parent}-field__textarea` name=`${name}` required=`${isRequired}`)

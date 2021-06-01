@@ -1,5 +1,6 @@
 section#about-us
-  div(class=prefix + '-about')
-    div(class=prefix + '-wrapper ' + prefix + '-about__wrapper')
+  div(class=`${prefix}-about`)
+    div(class=`${prefix}-wrapper ${prefix}-about__wrapper`)
+      +genTitle('sec', `${prefix}-about`, 'About us')
       include ./components/AboutInfo
       include ./components/AboutMedia

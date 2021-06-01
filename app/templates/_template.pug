@@ -11,14 +11,14 @@ html(lang="en")
     +genLink('favicon.ico', 'shortcut icon')
     +genLink('styles', 'stylesheet')
   body
-    div(class=prefix + '-page')
-      header(class=prefix + '-header ' + prefix + '-header--is-fixed ' + prefix + '-page__header ' + 'js--scroll-by-user' )
+    div(class=`${prefix}-page`)
+      header(class=`${prefix}-header ${prefix}-header--is-fixed ${prefix}-page__header js--scroll-by-user`)
         include ../components/header/Index
 
-      main(class=prefix + '-main ' + prefix + '-page__main')
+      main(class=`${prefix}-main ${prefix}-page__main`)
         block Main
 
-      footer(class=prefix + '-footer ' + prefix + '-page__footer')
+      footer(class=`${prefix}-footer ${prefix}-page__footer`)
         include ../components/footer/Index
 
     +genScript('app.min')
