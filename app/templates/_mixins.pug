@@ -22,8 +22,9 @@ mixin genMainMenu(menu, parent, isNav = false, isHeader = false)
   if isNav
     nav(class=`${prefix}-menu ${parent}__menu`)
       span(class=`${prefix}-menu__line`)
-      button(class=`${prefix}-menu-burger ${prefix}-menu__burger`)
-        span(class=`${prefix}-menu-burger__icon`)
+      if isHeader
+        button(class=`${prefix}-menu-burger ${prefix}-menu__burger` aria-label='Close menu')
+          span(class=`${prefix}-menu-burger__icon`)
       ul(class=`${prefix}-menu-list ${parent}-menu__list`)
         for val in menu
           li(class=`${prefix}-menu-list__item`)
