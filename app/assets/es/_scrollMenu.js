@@ -4,6 +4,7 @@
  * 2. Скролл страницы с изменением состояния пункта меню
  */
 document.addEventListener('DOMContentLoaded', () => {
+  const allLinks = document.querySelectorAll('a[href^="#"');
   const firstMenuLink = document.querySelectorAll(`${prefix}-header ${prefix}-menu-list__link`)[0];
   const menuLine = document.querySelector(`${prefix}-header ${prefix}-menu__line`);
   const menuItem = document.querySelectorAll(`${prefix}-header ${prefix}-menu-list__item`);
@@ -13,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   menuLine.style.left = `${firstMenuLink.offsetLeft}px`;
   menuLine.style.width = `${firstMenuLink.offsetWidth}px`;
 
-  document.querySelectorAll('a[href^="#"').forEach((link) => {
+  allLinks.forEach((link) => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
 
@@ -62,3 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+/**
+ * Надо раздробить код на функции
+*/
