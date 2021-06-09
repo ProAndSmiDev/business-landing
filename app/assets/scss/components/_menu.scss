@@ -10,7 +10,7 @@
     width: 100%;
     height: em(2, $fz);
     background-color: $primary;
-    transition: left 0.3s ease-in-out;
+    transition: left 0.3s ease-in-out, max-width 0.3s ease-in-out;
   }
 }
 

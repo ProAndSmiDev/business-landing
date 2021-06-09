@@ -5,8 +5,12 @@
   font: inherit;
 }
 
-section {
-  height: 100vh;
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font: #{$fz_base}px/1.5 'Arial', 'Roboto', sans-serif;
 }
 
 .#{$prefix}-header {
@@ -20,12 +24,12 @@ section {
   }
 }
 
-body {
-  font: #{$fz_base}px/1.5 'Arial', 'Roboto', sans-serif;
-}
-
 main {
   flex: 1 0 auto;
+}
+
+section {
+  height: 100vh;
 }
 
 picture {

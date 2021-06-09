@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const mainBlock = document.querySelector(`${prefix}-main`);
+  const allSections = document.querySelectorAll('section');
 
   if (isFixedHeader || isStickyHeader) {
-    mainBlock.style.marginTop = `${header.offsetHeight}px`;
+    allSections.forEach((block) => {
+      block.style.paddingTop = `${header.offsetHeight}px`;
+    });
   }
 });

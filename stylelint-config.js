@@ -441,8 +441,8 @@ module.exports = {
         'media-feature-parentheses-space-inside': ['never',
             {
                 message:
-                    'В медиа запросах после открывающейся круглой скобки и так же перед закрывающейся не должно быть пустого места'
-                    + 'https://stylelint.io/user-guide/rules/media-feature-parentheses-space-inside/',
+                'В медиа запросах после открывающейся круглой скобки и так же перед закрывающейся не должно быть пустого места'
+                + 'https://stylelint.io/user-guide/rules/media-feature-parentheses-space-inside/',
             },
         ],
         'no-missing-end-of-source-newline': [true,

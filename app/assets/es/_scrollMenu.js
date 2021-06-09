@@ -12,54 +12,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   firstMenuLink.parentElement.classList.add(`${prefix.slice(1)}-menu-list__item--is-active`);
   menuLine.style.left = `${firstMenuLink.offsetLeft}px`;
-  menuLine.style.width = `${firstMenuLink.offsetWidth}px`;
+  menuLine.style.maxWidth = `${firstMenuLink.offsetWidth}px`;
 
   allLinks.forEach((link) => {
-    link.addEventListener('click', (e) => {
+    document.addEventListener('scroll', (e) => {
       e.preventDefault();
 
-      let linkHref = link.getAttribute('href').slice(1);
-      const topOffset = (isFixedHeader || isStickyHeader) ? header.offsetHeight : 0;
-      const linkTarget = (linkHref) ? document.getElementById(linkHref) : null;
-      const linkTargetPos = (linkTarget) ? linkTarget.offsetTop : null;
-      const linkScrollOffset = (linkTargetPos) ? linkTargetPos - topOffset : null;
+      const scrollDistance = window.scrollY;
+      const allSections = document.querySelectorAll('section');
 
-      if (link.classList.contains(`${prefix.slice(1)}-menu-list__link`)) {
-        menuItem.forEach((linkItem) => {
-          if (linkItem.classList.contains(`${prefix.slice(1)}-menu-list__item--is-active`)) {
-            linkItem.classList.remove(`${prefix.slice(1)}-menu-list__item--is-active`);
+      allSections.forEach((block, idx) => {
+        if (block.offsetTop - header.offsetHeight <= scrollDistance) {
+          if (link.parentElement.classList.contains(`${prefix.slice(1)}-menu-list__item--is-scroll-active`)) {
+            link.parentElement.classList.remove(`${prefix.slice(1)}-menu-list__item--is-scroll-active`);
           }
-        });
 
-        link.parentElement.classList.add(`${prefix.slice(1)}-menu-list__item--is-active`);
-
-        menuLine.style.left = `${link.offsetLeft}px`;
-        menuLine.style.width = `${link.offsetWidth}px`;
-      }
-
-      window.scrollTo({
-        top: linkScrollOffset || 0,
-        behavior: 'smooth',
+          menuLinks[idx + 1].parentElement.classList.add(`${prefix.slice(1)}-menu-list__item--is-scroll-active`);
+          menuLine.style.left = `${menuLinks[idx + 1].offsetLeft}px`;
+          menuLine.style.maxWidth = `${menuLinks[idx + 1].offsetWidth}px`;
+        }
       });
-    });
-  });
-
-  document.addEventListener('scroll', () => {
-    const scrollDistance = window.scrollY;
-    const allSections = document.querySelectorAll('section');
-
-    allSections.forEach((block, idx) => {
-      if (block.offsetTop - header.offsetHeight <= scrollDistance) {
-        menuLinks.forEach((link) => {
-          if (link.parentElement.classList.contains(`${prefix.slice(1)}-menu-list__item--is-active`)) {
-            link.parentElement.classList.remove(`${prefix.slice(1)}-menu-list__item--is-active`);
-          }
-        });
-
-        menuLinks[idx+1].parentElement.classList.add(`${prefix.slice(1)}-menu-list__item--is-active`);
-        menuLine.style.left = `${menuLinks[idx+1].offsetLeft}px`;
-        menuLine.style.width = `${menuLinks[idx+1].offsetWidth}px`;
-      }
     });
   });
 });
