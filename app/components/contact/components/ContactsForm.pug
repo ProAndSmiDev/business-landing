@@ -5,5 +5,5 @@ form(class=`${prefix}-contacts-form ${prefix}-contacts__form`)
     +genInput('textarea', 'userTextArea', 'Your comments')
     +genInput('checkbox', 'userCheckInput', 'I agree with <a href="#">terms and conditions</a>', true)
 
-    button(type='submit' class=`${prefix}-contacts-form-submit ${prefix}-contacts-form__submit`)
-        span(class=`${prefix}-contacts-form-submit__text`) Send
+    button(type='submit' class=`${prefix}-btn ${prefix}-btn--is-submit ${prefix}-contacts-form__btn ${prefix}-contacts-form__btn--is-submit`)
+        span(class=`${prefix}-btn__text`) Send

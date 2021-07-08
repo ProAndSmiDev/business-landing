@@ -1,3 +1,5 @@
-.#{$prefix}-logo {
-  display: flex;
+.#{$prefix}-link {
+  &--is-logo {
+    display: flex;
+  }
 }

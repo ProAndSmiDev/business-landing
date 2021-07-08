@@ -7,9 +7,11 @@
     padding-bottom: em(29, $fz);
   }
 
-  &__logo {
-    width: 100%;
-    max-width: em(147, $fz);
-    line-height: 1;
+  &__link {
+    &--is-logo {
+      width: 100%;
+      max-width: em(147, $fz);
+      line-height: 1;
+    }
   }
 }

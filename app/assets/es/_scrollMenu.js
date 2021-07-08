@@ -23,13 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       allSections.forEach((block, idx) => {
         if (block.offsetTop - header.offsetHeight <= scrollDistance) {
-          if (link.parentElement.classList.contains(`${prefix.slice(1)}-menu-list__item--is-scroll-active`)) {
-            link.parentElement.classList.remove(`${prefix.slice(1)}-menu-list__item--is-scroll-active`);
+          if (link.parentElement.classList.contains(`${prefix.slice(1)}-menu-list__item--is-active`)) {
+            link.parentElement.classList.remove(`${prefix.slice(1)}-menu-list__item--is-active`);
           }
 
-          menuLinks[idx + 1].parentElement.classList.add(`${prefix.slice(1)}-menu-list__item--is-scroll-active`);
-          menuLine.style.left = `${menuLinks[idx + 1].offsetLeft}px`;
-          menuLine.style.maxWidth = `${menuLinks[idx + 1].offsetWidth}px`;
+          menuLinks[idx].parentElement.classList.add(`${prefix.slice(1)}-menu-list__item--is-active`);
+          menuLine.style.left = `${menuLinks[idx].offsetLeft}px`;
+          menuLine.style.maxWidth = `${menuLinks[idx].offsetWidth}px`;
         }
       });
     });

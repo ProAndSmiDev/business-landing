@@ -1,4 +1,4 @@
-div(class=`${prefix}-wrapper ${prefix}-footer__wrapper`)
+div(class=`u-${prefix}-wrapper ${prefix}-footer__wrapper`)
   div(class=`${prefix}-footer__upper`)
     include ./components/FooterMenu
     include ./components/SubscribeForm
@@ -6,4 +6,4 @@ div(class=`${prefix}-wrapper ${prefix}-footer__wrapper`)
 
   div(class=`${prefix}-footer__lower`)
     include ./components/Copyright
-    +genMainMenu(menuPolicy, `${prefix}-footer`)
+    +genMainMenu(menuPolicy, `footer`)
