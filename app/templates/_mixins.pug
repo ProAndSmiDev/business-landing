@@ -39,16 +39,16 @@ mixin genMainMenu(menu, parent, isNav = false, isHeader = false)
 
 mixin genTitle(type, parent, text, isInvert = false)
   if type === 'main'
-    h1(class=`${prefix}-title ${prefix}-title--is-primary ${prefix}-${parent}__title ${prefix}-${parent}__title--is-primary`)
+    h1(class=`${prefix}-title ${(isInvert) ? `${prefix}-title--is-inverted` : ``} ${prefix}-title--is-primary ${prefix}-${parent}__title ${prefix}-${parent}__title--is-primary`)
       span(class=`${prefix}-title__text`)= text
   else if type === 'sec'
-    h2(class=`${prefix}-title ${prefix}-title--is-sec ${prefix}-${parent}__title ${prefix}-${parent}__title--is-sec`)
+    h2(class=`${prefix}-title ${(isInvert) ? `${prefix}-title--is-inverted` : ``} ${prefix}-title--is-sec ${prefix}-${parent}__title ${prefix}-${parent}__title--is-sec`)
       span(class=`${prefix}-title__text`)= text
   else if type === 'thd'
-    h3(class=`${prefix}-title ${prefix}-title--is-thd ${prefix}-${parent}__title ${prefix}-${parent}__title--is-thd`)
+    h3(class=`${prefix}-title ${(isInvert) ? `${prefix}-title--is-inverted` : ``} ${prefix}-title--is-thd ${prefix}-${parent}__title ${prefix}-${parent}__title--is-thd`)
       span(class=`${prefix}-title__text`)= text
   else
-    h4(class=`${prefix}-title ${prefix}-title--is-other ${prefix}-${parent}__title ${prefix}-${parent}__title--is-other`)
+    h4(class=`${prefix}-title ${(isInvert) ? `${prefix}-title--is-inverted` : ``} ${prefix}-title--is-other ${prefix}-${parent}__title ${prefix}-${parent}__title--is-other`)
       span(class=`${prefix}-title__text`)= text
 
 mixin genInput(type='', name='', title='', isChecked=false, isRequired=true, parent=`contacts-form`)

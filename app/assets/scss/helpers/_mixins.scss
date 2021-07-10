@@ -11,14 +11,6 @@
   }
 }
 
-@mixin setImage($img_path, $img_format: 'jpg') {
-  background-image: url($img_path + '.' + $img_format);
-
-  @supports (background-image: -webkit-image-set($img_path + '.webp', 1x)) {
-    background-image: -webkit-image-set($img_path + '.webp', 1x);
-  }
-}
-
 @mixin setTruncate {
   text-overflow: ellipsis;
   overflow: hidden;

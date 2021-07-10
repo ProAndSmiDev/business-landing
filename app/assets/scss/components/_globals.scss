@@ -10,12 +10,13 @@ html {
 }
 
 body {
-  font: #{$fz_base}px/1.5 'Arial', 'Roboto', sans-serif;
+  font: #{$fz_base}px/1.5 '#{$main_font}','Arial', 'Roboto', sans-serif;
 }
 
 .#{$prefix}-header {
   &--is-fixed {
     position: fixed;
+    z-index: 1000;
     width: 100%;
   }
 
@@ -26,10 +27,6 @@ body {
 
 main {
   flex: 1 0 auto;
-}
-
-section {
-  height: 100vh;
 }
 
 picture {
@@ -100,4 +97,34 @@ footer {
   max-width: em(1140, $fz);
   margin-right: auto;
   margin-left: auto;
+}
+
+.#{$prefix}-title {
+  text-transform: uppercase;
+  color: hsl(0, 0%, 100%);
+
+  &--is-inverted {
+    color: lighten($third, 14%);
+  }
+}
+
+.#{$prefix}-link {
+  display: inline-block;
+  border-radius: em(4, $fz);
+
+  &--is-btn {
+    padding: em(11 15, $fz);
+    background-color: $primary;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+      background-color: darken($primary, 10%);
+    }
+  }
+
+  &__text {
+    color: $secondary;
+  }
 }

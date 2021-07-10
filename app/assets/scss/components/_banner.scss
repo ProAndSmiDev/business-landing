@@ -1,0 +1,91 @@
+.#{$prefix}-banner {
+  display: flex;
+  align-items: center;
+  background-image: url('/img/banner.jpg');
+  background-position: center top;
+  background-size: cover;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: transparentize(lighten($third, 35%), 0.5);
+  }
+
+  &__wrapper {
+    position: relative;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .#{$prefix}-title {
+    &__text {
+      $fz: 56;
+      font-family: 'Montserrat', 'Arial', 'Roboto', sans-serif;
+      font-size: em($fz, $fz_base);
+      letter-spacing: em(0.15, $fz);
+    }
+  }
+
+  .#{$prefix}-info {
+    &__link {
+      width: 100%;
+      max-width: em(348, $fz);
+      margin-top: em(135, $fz);
+
+      @media all and (max-height: $mini_screen) {
+        margin-top: em(50, $fz);
+      }
+
+      @media all and (max-width: $smart_phone) {
+        margin-top: em(50, $fz);
+      }
+    }
+  }
+
+  .#{$prefix}-link {
+    &__text {
+      $fz: 18;
+      font-size: em($fz, $fz_base);
+      line-height: em(26, $fz);
+    }
+  }
+
+  .#{$prefix}-btn {
+    &--with-icon {
+      position: absolute;
+      bottom: em(110, $fz);
+      left: 50%;
+      transform: translateY(-50%);
+
+      @media all and (max-height: $mini_screen) {
+        bottom: em(70, $fz);
+      }
+
+      @media all and (max-width: $smart_phone) {
+        bottom: em(70, $fz);
+      }
+    }
+
+    &__icon {
+      width: em(29, $fz);
+      height: em(14, $fz);
+      color: $secondary;
+    }
+  }
+
+  @media all and (max-height: $mini_screen) {
+    font-size: 2vh;
+  }
+
+  @media all and (max-width: $smart_phone) {
+    font-size: 12px;
+  }
+}
+
+
+

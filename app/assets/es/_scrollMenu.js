@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const allLinks = document.querySelectorAll('a[href^="#"');
   const firstMenuLink = document.querySelectorAll(`${prefix}-header ${prefix}-menu-list__link`)[0];
   const menuLine = document.querySelector(`${prefix}-header ${prefix}-menu__line`);
-  const menuItem = document.querySelectorAll(`${prefix}-header ${prefix}-menu-list__item`);
   const menuLinks = document.querySelectorAll(`${prefix}-header ${prefix}-menu-list__link`);
 
   firstMenuLink.parentElement.classList.add(`${prefix.slice(1)}-menu-list__item--is-active`);
