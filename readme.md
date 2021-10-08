@@ -1,5 +1,6 @@
 # Проект "Business-landing":
 ![Лого проекта][1]
+![Шаблон сайта][2]
 
 ---
 
@@ -66,7 +67,8 @@
     - [swiper](https://swiperjs.com)
 
 ### Frontend-разработчик:
-[![Лого специалиста по веб-разработке][2]](https://andsmi.ru)
+[![Лого специалиста по веб-разработке][3]](https://andsmi.ru)
 
 [1]: app/assets/webp/logo.png
-[2]: dev/logo.png
+[2]: figma/template.png
+[3]: dev/logo.png
