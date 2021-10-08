@@ -1,2 +1,5 @@
 mixin getHeader(parent)
   header.header(class=`${(parent) ? parent + '__header' : ''}`)
+    .u-wrapper.header__wrapper
+      +getLogo('header')
+      +getMenu('header')

@@ -1,0 +1,108 @@
+/*
+  --- Generates url to local fonts ---
+  $fontName - name by font, which uses in property "font-family" (example: 'Arial', 'Roboto')
+  $fileName - name by font's file to include in website (example: 'ArialRegular', 'ArialBold')
+  $fontWeight - count for font's weight, which uses in property "font-weight" (example: 700, 300, 100)
+  $fontStyle - it's a boolean type which includes values "true" or "false" - adds a property "font-style: italic" if it's true
+*/
+@mixin setFamily($fontName, $fileName, $fontWeight, $fontStyle: false) {
+  @font-face {
+    font-family: $fontName;
+    font-display: swap;
+    @if $fontStyle {
+      font-style: italic;
+    }
+    font-weight: $fontWeight;
+    src: url('../fonts/#{$fontName}/#{$fileName}.woff2') format('woff2'),
+    url('../fonts/#{$fontName}/#{$fileName}.ttf') format('truetype');
+  }
+}
+
+/*
+  --- Generates a media queries for your scss styles ---
+  $point - including a name for breakpoint (example: tablet, desktop)
+  $mode - including mode by breakpoint (example: 'min', 'max')
+*/
+@mixin media($point, $mode: 'max', $side: 'width') {
+  // TODO: Раскомментировать нужные точки
+  $breakpoints_height: (
+      'mobile': 475px,
+      'smartphone': 540px,
+  );
+  $breakpoints_width: (
+    //'phone': 419px,
+    //'smartphone': 479px,
+    // 'tablet': 767px,
+    //'banner_tablet': 800px,
+    //'desktop': 1023px,
+    //'wide_screen': 1200px,
+    //'wide_screen': 1600px,
+      'FullHD': 1919px,
+  );
+
+  @if $side == 'width' {
+    @if map-has-key($breakpoints_width, $point) {
+      @if $mode == 'max' {
+        @media (max-width: #{map-get($breakpoints_width, $point)}) {
+          @content;
+        }
+      }
+
+      @if $mode == 'min' {
+        @media (min-width: #{map-get($breakpoints_width, $point)}) {
+          @content;
+        }
+      }
+    }
+  } @else {
+    @if map-has-key($breakpoints_height, $point) {
+      @if $mode == 'max' {
+        @media (max-height: #{map-get($breakpoints_height, $point)}) {
+          @content;
+        }
+      }
+
+      @if $mode == 'min' {
+        @media (min-height: #{map-get($breakpoints_height, $point)}) {
+          @content;
+        }
+      }
+    }
+  }
+}
+
+@mixin vw($size) {
+  $breakpoints: (
+      'FullHD': 1920px,
+  );
+
+  $vw-content: (map_get($breakpoints, 'FullHD') * 0.01) * 1px;
+  font-size: ($size/$vw-content) * 1vw;
+
+  @include media('>FullHD') {
+    font-size: $size;
+  }
+}
+
+/*
+  --- Generates properties for ellipses by a long texts ---
+*/
+@mixin setTruncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin pulseColor($red: 255, $green: 255, $blue: 255) {
+  0% {
+    box-shadow: 0 0 0 0 rgba($red, $green, $blue, .4);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba($red, $green, $blue, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba($red, $green, $blue, 0);
+  }
+}

@@ -1,2 +1,4 @@
 mixin getFooter(parent)
     footer.footer(class=`${(parent) ? parent + '__footer' : ''}`)
+      .u-wrapper.footer__wrapper
+        +getMenu('footer', true)

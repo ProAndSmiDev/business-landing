@@ -1,0 +1,9 @@
+mixin getMenu(parent, isColumn)
+  nav.nav(class=`${(parent) ? parent + '__nav' : ''}`)
+    if parent === 'header'
+      button.burger.nav__burger.js--toggle-by-burger
+    ul.list.nav__list(class=`${(isColumn) ? 'list--is-column' : ''}`)
+      for item in menu
+        li.list__item
+          a.link.list__link(href=item.url title=item.urlTitle target='_self')
+            span.link__text= item.title

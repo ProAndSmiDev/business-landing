@@ -1,9 +1,9 @@
 extends ../templates/_template
 
 block SEO
-    +getMeta('description', '')
-    +getMeta('keywords', '')
-    title some title is here
+    +getMeta('description', page.index.description)
+    +getMeta('keywords', page.index.keywords)
+    title= page.index.title
 
 include ../components/header/Index
 include ../components/main/Index

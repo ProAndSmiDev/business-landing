@@ -1,3 +1,46 @@
 {
-
+  "company": {
+    "logo": {
+      "name": "logo",
+      "alt": "Company's logo"
+    }
+  },
+  "menu": [
+    {
+      "title": "Home",
+      "url": "/",
+      "urlTitle": "Follow to main section"
+    },
+    {
+      "title": "About us",
+      "url": "#about",
+      "urlTitle": "Follow to «About» section"
+    },
+    {
+      "title": "Team",
+      "url": "#team",
+      "urlTitle": "Follow to «Team» section"
+    },
+    {
+      "title": "Projects",
+      "url": "#projects",
+      "urlTitle": "Follow to «Projects» section"
+    },
+    {
+      "title": "Contact",
+      "url": "#contact",
+      "urlTitle": "Follow to «Contact» section"
+    }
+  ],
+  "page": {
+    "index": {
+      "title": "Template for your business - «Main page»",
+      "description": "Marketing and professional landing page for your business",
+      "keywords": "business, landing, andsmi"
+    }
+  },
+  "developer": {
+    "author": "AndSmi",
+    "copyright": "Developed by AndSmi"
+  }
 }

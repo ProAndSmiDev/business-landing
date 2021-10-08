@@ -1,3 +1,5 @@
 mixin getLogo(parent)
     a.logo(class=`${(parent) ? parent + '__logo' : ''}`)
-        img(src='' alt='')
+      picture.logo__pic
+        source(srcset=`./img/${company.logo.name}.webp` type='image/webp')
+        img(src=`./img/${company.logo.name}.png` alt=company.logo.alt).logo__img

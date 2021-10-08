@@ -3,11 +3,12 @@ html(lang='en')
     head
         +getMeta('Content-Type', 'text/html, charset=utf-8')
         +getMeta('viewport', 'width=device-width, initial-scale=1')
+        base(href='/' target='_blank')
         block SEO
-        +getMeta('author', 'AndSmi')
-        +getMeta('copyright', 'Developed by AndSmi')
+        for content, name in developer
+          +getMeta(name, content)
         +getLink('icon', 'favicon')
-        +getLink('stylesheet', 'styles.min')
+        +getLink('stylesheet', 'styles')
         +getLink('canonical', '')
     body
         .business-page
