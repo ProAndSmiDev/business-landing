@@ -1,0 +1,18 @@
+$font: 'WorkSans';
+
+$primary: hsl(0, 0%, 100%); // #fff
+$secondary: hsl(0, 0%, 0%); // #000
+$theme: hsl(209, 99%, 57%); // #2696fe
+$error: hsl(0, 100%, 48%); // #f60000
+$loader: hsl(30, 1%, 47%); // #787776
+
+$theme_darker: desaturate(darken($theme, 9%), 27%); // #227dd1
+
+$primary_darker: darken($primary, 4%); // #f5f5f5
+$primary_gray: darken($primary, 23%); // #c4c4c4
+$primary_grayest: saturate(darken($primary, 7%), 14%); // #f0ebeb
+
+$secondary_lighter: lighten($secondary, 9%); // #161616
+$secondary_lightest: lighten($secondary, 11%); // #1b1b1b
+$secondary_gray: lighten($secondary, 14%); // #232323
+$secondary_grayest: lighten($secondary, 35%); // #585858

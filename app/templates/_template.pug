@@ -1,0 +1,19 @@
+include helpers/mixins
+html(lang='en')
+    head
+        +getMeta('Content-Type', 'text/html, charset=utf-8')
+        +getMeta('viewport', 'width=device-width, initial-scale=1')
+        block SEO
+        +getMeta('author', 'AndSmi')
+        +getMeta('copyright', 'Developed by AndSmi')
+        +getLink('icon', 'favicon')
+        +getLink('stylesheet', 'styles.min')
+        +getLink('canonical', '')
+    body
+        .business-page
+            +getHeader('business-page')
+            +getMain('business-page')
+            +getFooter('business-page')
+
+        +getScript('libs.min')
+        +getScript('app.min')

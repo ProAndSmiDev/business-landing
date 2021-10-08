@@ -1,0 +1,10 @@
+extends ../templates/_template
+
+block SEO
+    +getMeta('description', '')
+    +getMeta('keywords', '')
+    title some title is here
+
+include ../components/header/Index
+include ../components/main/Index
+include ../components/footer/Index

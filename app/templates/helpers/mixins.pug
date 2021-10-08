@@ -1,0 +1,16 @@
+mixin getMeta(name, content)
+  if name !== 'Content-Type'
+    meta(name=name content=content)
+  else
+    meta(http-equiv=name content=content)
+
+mixin getLink(type, file)
+  if type === 'stylesheet'
+    link(rel='stylesheet' href=`./css/${file}.css`)
+  else if type === 'icon'
+    link(rel='shortcut icon' href=`./img/${file}.ico`)
+  else
+    link(rel='canonical' href='/')
+
+mixin getScript(file)
+  script(src=`./js/${file}.js`)
