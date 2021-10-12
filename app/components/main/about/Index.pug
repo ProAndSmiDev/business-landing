@@ -1,0 +1,13 @@
+mixin getAbout(parent)
+  section#about.about(class=`${(parent) ? parent + '__about' : ''}`)
+    .u-wrapper.u-wrapper--is-row.about__wrapper
+      .about__left
+        +getTitle('about', 'About us', true)
+        +getParagraph('about', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at<br/> vestibulum est. Maecenas elit turpis, dictum<br/> et purus maximus, posuere iaculis est.<br/> Nam id maximus sem. Donec tincidunt id nulla a aliquet. Suspendisse diam tellus, porta et cursus ut, laoreet et odio. Vivamus risus sem, imperdiet sit amet neque ut, imperdiet volutpat est. In luctus odio ligula, a luctus magna finibus at. Donec non ligula sit amet sem accumsan ullamcorper<br/> nec ac neque.')
+      .about__right
+        picture.about-pic.about__pic
+          source(srcset='./img/about/front.webp' type='image/webp')
+          img(src='./img/about/front.jpg' alt='Front picture').about-pic__img
+        picture.about-pic.about-pic--is-absoluted.about__pic
+          source(srcset='./img/about/back.webp' type='image/webp')
+          img(src='./img/about/back.jpg' alt='Front picture').about-pic__img

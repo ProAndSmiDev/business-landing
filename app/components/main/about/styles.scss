@@ -1,0 +1,46 @@
+.about {
+  &__wrapper {
+    justify-content: flex-start;
+  }
+
+  &__left {
+    width: 100%;
+    flex-grow: 0;
+    flex-basis: em(541, $fz);
+    margin-right: em(30, $fz);
+  }
+
+  &__right {
+    position: relative;
+    width: 100%;
+    flex-grow: 0;
+    flex-basis: em(460, $fz);
+  }
+
+  &__paragraph {
+    margin-top: em(45, $fz);
+  }
+}
+
+.about-pic {
+  $self: &;
+  position: relative;
+
+  &--is-absoluted {
+    position: absolute;
+    max-width: em(354, $fz);
+    top: em(150, $fz);
+    right: em(-200, $fz);
+    z-index: -1000;
+
+    #{$self} {
+      &__img {
+        max-height: em(291, $fz);
+      }
+    }
+  }
+
+  &__img {
+    border-radius: em(4, $fz);
+  }
+}

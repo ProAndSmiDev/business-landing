@@ -1,0 +1,3 @@
+mixin getTitle(parent, text, isInverted)
+  h2.title(class=`${(parent) ? parent + '__title' : ''}${(isInverted) ? ' title--is-inverted' : ''}`)
+    span.title__text= text

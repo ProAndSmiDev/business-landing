@@ -1,0 +1,16 @@
+.title {
+  text-transform: uppercase;
+  color: color(primary);
+
+  &--is-inverted {
+    color: $secondary_gray;
+  }
+
+  &__text {
+    $fz: 36;
+    font-size: em($fz, $fz_base);
+    font-weight: 700;
+    line-height: em(56, $fz);
+    letter-spacing: 0.15px;
+  }
+}

@@ -1,5 +1,7 @@
 include banner/Index
+include about/Index
 
 mixin getMain(parent)
     main.main(class=`${(parent) ? parent + '__main' : ''}`)
       +getBanner('main')
+      +getAbout('main')
