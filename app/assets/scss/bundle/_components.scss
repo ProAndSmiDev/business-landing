@@ -1,9 +1,14 @@
 @import '../../../components/global/logo/styles';
 @import '../../../components/global/menu/styles';
+@import '../../../components/global/button/styles';
+@import '../../../components/global/paragraph/styles';
 
-@import '../../../components/header/banner/styles';
+@import '../../../templates/styles';
+
+@import '../../../components/header/styles';
 
 @import '../../../components/main/styles';
+@import '../../../components/main/banner/styles';
 @import '../../../components/main/about/styles';
 @import '../../../components/main/team/styles';
 @import '../../../components/main/team/components/teammate/styles';

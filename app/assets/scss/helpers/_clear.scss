@@ -13,6 +13,11 @@ main {
   flex: 1 0 auto;
 }
 
+section {
+  padding-top: em(90, $fz);
+  padding-bottom: em(90, $fz);
+}
+
 picture {
   display: inline-block;
   width: 100%;
@@ -62,4 +67,46 @@ input {
 
 footer {
   flex: 0 0 auto;
+}
+
+body {
+  font: #{$fz_base}px/1.5 '#{$font}','Arial', 'Roboto', sans-serif;
+}
+
+.header {
+  &--is-fixed {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+  }
+
+  &--is-sticky {
+    position: sticky;
+  }
+}
+
+.business-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.u-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: em(15, $fz);
+  padding-left: em(15, $fz);
+  width: 100%;
+  max-width: em(1140, $fz);
+  margin-right: auto;
+  margin-left: auto;
+
+  &--is-row {
+    flex-direction: row;
+  }
 }

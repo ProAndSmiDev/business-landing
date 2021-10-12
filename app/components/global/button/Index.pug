@@ -1,0 +1,3 @@
+mixin getButton(parent, type, text)
+  button.button(type=type class=`${(parent) ? parent + '__button' : ''}${(type==='button') ? ' js--scroll-by-button' : ''}`)
+    span.button__text= text

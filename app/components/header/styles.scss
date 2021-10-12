@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  align-items: center;
+  background-color: $secondary_gray;
+
+  &__wrapper {
+    flex-direction: row;
+  }
+
+  &__logo {
+    max-width: em(141, $fz);
+  }
+}

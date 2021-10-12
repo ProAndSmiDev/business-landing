@@ -10,7 +10,22 @@
   justify-content: center;
   align-items: center;
 
+  &__item {
+    margin-right: em(20, $fz);
+  }
+
   &--is-column {
     flex-direction: column;
+  }
+}
+
+.list-link {
+  color: $primary_darker;
+
+  &__text {
+    $fz: 18;
+    font-size: em($fz, $fz_base);
+    line-height: em(56, $fz);
+    letter-spacing: em(0.15, $fz);
   }
 }

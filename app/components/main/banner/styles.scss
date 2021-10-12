@@ -1,0 +1,27 @@
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../img/banner/bg.jpg');
+  background-size: cover;
+
+  &__button {
+    max-width: em(354, $fz);
+    margin-top: em(135, $fz);
+  }
+}
+
+.banner-title {
+  text-transform: uppercase;
+  color: color(primary);
+
+  &__text {
+    $fz: 72;
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    font-size: em($fz, $fz_base);
+    font-weight: 700;
+    line-height: em(56, $fz);
+    letter-spacing: 0.15px;
+  }
+}

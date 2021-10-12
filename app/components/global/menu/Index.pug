@@ -5,5 +5,5 @@ mixin getMenu(parent, isColumn)
     ul.list.nav__list(class=`${(isColumn) ? 'list--is-column' : ''}`)
       for item in menu
         li.list__item
-          a.link.list__link(href=item.url title=item.urlTitle target='_self')
-            span.link__text= item.title
+          a.list-link.list__link(href=item.url title=item.urlTitle target='_self')
+            span.list-link__text= item.title

@@ -1,0 +1,11 @@
+.paragraph {
+  line-height: em(26, $fz);
+  color: $secondary_gray;
+
+  &__text {
+    $fz: 14;
+    font-size: em($fz, $fz_base);
+    font-weight: 300;
+    letter-spacing: 0.15px;
+  }
+}

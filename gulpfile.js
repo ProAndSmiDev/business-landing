@@ -30,8 +30,8 @@ const assetsURI = root.dev + 'assets/';
 const dev       = {
   data:  `${root.dev}/data/data.json`,
   pug:   `${root.dev}views/*.pug`,
-  webp:  `${assetsURI}webp/*.+(png|jpg|jpeg)`,
-  img:   `${assetsURI}img/*.+(png|jpg|jpeg)`,
+  webp:  `${assetsURI}webp/**/*.+(png|jpg|jpeg)`,
+  img:   `${assetsURI}img/**/*.+(png|jpg|jpeg)`,
   svg:   `${assetsURI}svg/*.svg`,
   scss:  `${assetsURI}scss/main.scss`,
   js:    `${assetsURI}js/*.js`,

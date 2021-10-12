@@ -1,5 +1,5 @@
 mixin getHeader(parent)
-  header.header(class=`${(parent) ? parent + '__header' : ''}`)
+  header.header.header--is-fixed(class=`${(parent) ? parent + '__header' : ''}`)
     .u-wrapper.header__wrapper
-      +getLogo('header')
-      +getMenu('header')
+        +getLogo('header')
+        +getMenu('header')

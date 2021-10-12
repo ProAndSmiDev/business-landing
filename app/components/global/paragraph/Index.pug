@@ -1,0 +1,3 @@
+mixin getParagraph(parent, text)
+  p.paragraph(class=`${(parent) ? parent + '__paragraph' : ''}`)
+    span.paragraph__text= text

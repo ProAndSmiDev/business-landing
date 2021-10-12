@@ -1,0 +1,19 @@
+.button {
+  width: 100%;
+  padding: em(11, $fz);
+  color: color(primary);
+  background-color: color(theme);
+  line-height: em(26, $fz);
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $theme_darker;
+  }
+
+  &__text {
+    $fz: 18;
+    font-size: em($fz, $fz_base);
+    font-weight: 500;
+    letter-spacing: 0.15px;
+  }
+}

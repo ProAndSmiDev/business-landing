@@ -1,2 +1,5 @@
+include banner/Index
+
 mixin getMain(parent)
     main.main(class=`${(parent) ? parent + '__main' : ''}`)
+      +getBanner('main')
