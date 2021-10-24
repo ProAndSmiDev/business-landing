@@ -208,13 +208,14 @@ const watchFiles = () => {
 };
 /* работа с localhost */
 
-/* Работа с изначальной сборкой проекта */
-const buildProd = series([
+const getAssets = series([
   parallel(getWoffFonts, getWoff2Fonts),
   parallel(getSVGSprite, getWEBPImages, getImages),
-  parallel(getLibs, getJS),
-  series(getStyles, getHTML),
+  parallel(getLibs, getJS, getStyles, getHTML)
 ]);
+
+/* Работа с изначальной сборкой проекта */
+const buildProd = series([getAssets, watchFiles]);
 /* Работа с изначальной сборкой проекта */
 
 /* Таски проекта */
