@@ -36,7 +36,97 @@
     "index": {
       "title": "Template for your business - «Main page»",
       "description": "Marketing and professional landing page for your business",
-      "keywords": "business, landing, andsmi"
+      "keywords": "business, landing, andsmi",
+      "section": {
+        "banner": {
+          "title": "One page",
+          "btnText": "Start now"
+        },
+        "about": {
+          "title": "About us",
+          "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at<br/> vestibulum est. Maecenas elit turpis, dictum<br/> et purus maximus, posuere iaculis est.<br/> Nam id maximus sem. Donec tincidunt id nulla a aliquet. Suspendisse diam tellus, porta et cursus ut, laoreet et odio. Vivamus risus sem, imperdiet sit amet neque ut, imperdiet volutpat est. In luctus odio ligula, a luctus magna finibus at. Donec non ligula sit amet sem accumsan ullamcorper<br/> nec ac neque."
+        },
+        "team": {
+          "title": "Our team",
+          "teammates": [
+            {
+              "name": "Alexander Duma",
+              "pic": {
+                "name": "alexander-duma",
+                "alt": "Alexander Duma while working"
+              },
+              "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at&nbsp;vestibulum est. Maecenas elit turpis, dictum et&nbsp;purus maximus, posuere iaculis est. Nam id&nbsp;maximus sem.",
+              "socials": [
+                {
+                  "title": "Facebook",
+                  "prefix": "fb",
+                  "link": "#"
+                },
+                {
+                  "title": "Twitter",
+                  "prefix": "tw",
+                  "link": "#"
+                },
+                {
+                  "title": "Instagram",
+                  "prefix": "in",
+                  "link": "#"
+                }
+              ]
+            },
+            {
+              "name": "John Smith",
+              "pic": {
+                "name": "john-smith",
+                "alt": "John Smith's photo"
+              },
+              "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at&nbsp;vestibulum est. Maecenas elit turpis, dictum et&nbsp;purus maximus, posuere iaculis est. Nam id&nbsp;maximus sem.",
+              "socials": [
+                {
+                  "title": "Facebook",
+                  "prefix": "fb",
+                  "link": "#"
+                },
+                {
+                  "title": "Twitter",
+                  "prefix": "tw",
+                  "link": "#"
+                },
+                {
+                  "title": "Instagram",
+                  "prefix": "in",
+                  "link": "#"
+                }
+              ]
+            },
+            {
+              "name": "Andrea Sim",
+              "pic": {
+                "name": "andrea-sim",
+                "alt": "Photo by Andrea Sim"
+              },
+              "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at&nbsp;vestibulum est. Maecenas elit turpis, dictum et&nbsp;purus maximus, posuere iaculis est. Nam id&nbsp;maximus sem.",
+              "socials": [
+                {
+                  "title": "Facebook",
+                  "prefix": "fb",
+                  "link": "#"
+                },
+                {
+                  "title": "Twitter",
+                  "prefix": "tw",
+                  "link": "#"
+                },
+                {
+                  "title": "Instagram",
+                  "prefix": "in",
+                  "link": "#"
+                }
+              ]
+            }
+          ]
+        }
+      }
     }
   },
   "developer": {

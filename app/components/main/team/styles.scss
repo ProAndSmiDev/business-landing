@@ -1,0 +1,25 @@
+.team {
+  padding-top: em(118, $fz);
+  padding-bottom: em(122, $fz);
+  background-color: color(secondary);
+
+  &__wrapper {
+    align-items: flex-start;
+  }
+
+  &__list {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: em(41, $fz);
+  }
+}
+
+.team-list {
+  &__item {
+    max-width: em(285, $fz);
+
+    &:not(:last-child) {
+      margin-right: em(47, $fz);
+    }
+  }
+}

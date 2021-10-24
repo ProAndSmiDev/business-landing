@@ -1,0 +1,22 @@
+.socials {
+  &__item {
+    &:not(:last-child) {
+      margin-right: em(18, $fz);
+    }
+  }
+}
+
+.socials-link {
+  color: color(primary);
+  transition-property: color;
+
+  &:hover {
+    opacity: 1;
+    color: $theme_darker;
+  }
+}
+
+.socials-link-icon {
+  width: em(24, $fz);
+  height: em(24, $fz);
+}

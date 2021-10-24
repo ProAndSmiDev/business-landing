@@ -1,5 +1,5 @@
-mixin getBanner(parent)
+mixin getBanner(parent, data)
   section.banner(class=`${(parent) ? parent + '__banner' : ''}`)
     h1.banner-title.banner__title
-      span.banner-title__text One page
-    +getButton('banner', 'button', 'Start now')
+      span.banner-title__text= data.title
+    +getButton('banner', 'button', data.btnText)

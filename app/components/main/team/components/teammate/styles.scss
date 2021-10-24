@@ -1,0 +1,33 @@
+.teammate {
+  &__title,
+  &__info {
+    margin-top: em(15, $fz);
+  }
+  &__socials {
+    margin-top: em(41, $fz);
+  }
+}
+
+.teammate-title {
+  color: color(primary);
+
+  &__text {
+    $fz: 18;
+    font-size: em($fz, $fz_base);
+    font-weight: 500;
+    letter-spacing: 0.15px;
+    line-height: em(56, $fz);
+  }
+}
+
+.teammate-info {
+  color: color(primary);
+
+  &__text {
+    $fz: 14;
+    font-size: em($fz, $fz_base);
+    font-weight: 300;
+    letter-spacing: 0.15px;
+    line-height: em(26, $fz);
+  }
+}

@@ -1,0 +1,16 @@
+//-
+  parent - String, принимает класс родителя
+  socials - Array, принимает массив с объектами данных:
+  {
+    "title": "Facebook",
+    "prefix": "fb",
+    "link": "#"
+  }
+
+mixin getSocials(parent, data)
+  ul.socials(class=`${(parent) ? parent + '__socials' : ''}`)
+    for item in data
+      li.socials__item
+        a(href=item.link title=`Follow to the «${item.title}»` target='_blank').socials-link.socials__link
+          svg.socials-link-icon.socials-link__icon
+            use(xlink:href=`/img/sprite.svg#${item.prefix}`)

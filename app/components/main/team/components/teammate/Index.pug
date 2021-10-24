@@ -1,0 +1,13 @@
+mixin getTeammate(parent, data)
+  article.teammate
+    picture.teammate__pic
+      source(srcset=`/img/team/${data.pic.name}.webp` type='image/webp')
+      img.teammate__img(src=`/img/team/${data.pic.name}.jpg` alt=data.pic.alt)
+
+    h3.teammate-title.teammate__title
+      span.teammate-title__text= data.name
+
+    p.teammate-info.teammate__info
+      span.teammate-info__text!= data.info
+
+    +getSocials('teammate', data.socials)
