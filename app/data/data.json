@@ -125,6 +125,34 @@
               ]
             }
           ]
+        },
+        "projects": {
+          "title": "Projects",
+          "subtitle": "Lorem ipsum dolor sit amet",
+          "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at&nbsp;vestibulum est. Maecenas elit turpis, dictum et&nbsp;purus maximus, posuere iaculis est. Nam id&nbsp;maximus sem.",
+          "works": [
+            {
+              "title": "Prototype",
+              "pic": {
+                "name": "prototype",
+                "alt": "Working by prototype"
+              }
+            },
+            {
+              "title": "Web-design",
+              "pic": {
+                "name": "web-design",
+                "alt": "Making a true web-design"
+              }
+            },
+            {
+              "title": "Development",
+              "pic": {
+                "name": "development",
+                "alt": "Development with some tools"
+              }
+            }
+          ]
         }
       }
     }

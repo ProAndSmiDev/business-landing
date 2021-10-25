@@ -1,0 +1,23 @@
+.work {
+  &__title {
+    position: absolute;
+    top: em(13, $fz);
+    width: 100%;
+    max-width: em(350, $fz);
+  }
+}
+
+.work-title {
+  text-align: center;
+  color: color(primary);
+  text-transform: uppercase;
+  background-color: color(secondary);
+
+  &__text {
+    $fz: 18;
+    font-size: em($fz, $fz_base);
+    line-height: em(56, $fz);
+    letter-spacing: 0.15px;
+    font-weight: 500;
+  }
+}

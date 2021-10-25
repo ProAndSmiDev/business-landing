@@ -1,0 +1,8 @@
+mixin getWork(parent, data)
+  article.work(class=`${(parent) ? parent + '__work' : ''}`)
+    h3.work-title.work__title
+      span.work-title__text= data.title
+    picture.work__pic
+      source(srcset=`/img/projects/works/${data.pic.name}.webp` type='image/webp')
+
+      img.work__img(src=`/img/projects/works/${data.pic.name}.jpg` alt=data.pic.alt)

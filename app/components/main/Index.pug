@@ -1,9 +1,11 @@
 include banner/Index
 include about/Index
 include team/Index
+include projects/Index
 
 mixin getMain(parent)
     main.main(class=`${(parent) ? parent + '__main' : ''}`)
       +getBanner('main', page.index.section.banner)
       +getAbout('main', page.index.section.about)
       +getTeam('main', page.index.section.team)
+      +getProjects('main', page.index.section.projects)
