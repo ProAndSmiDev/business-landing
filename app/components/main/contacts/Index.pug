@@ -1,0 +1,7 @@
+mixin getContacts(parent)
+  section.contacts(class=`${(parent) ? parent + '__contacts' : ''}`)
+    .u-wrapper.contacts__wrapper
+      .contacts__col
+        +getTitle('contacts', 'Contacts')
+        +getSubtitle('contacts', 'lorem ipsum dolor sit amet')
+        +getParagraph('contacts', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at vestibulum est. Maecenas elit turpis, dictum et purus maximus, posuere iaculis est. Nam id maximus sem.')

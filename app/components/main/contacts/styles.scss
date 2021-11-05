@@ -1,0 +1,34 @@
+.contacts {
+  background-image: url('../img/contacts/bg.jpg');
+  background-size: cover;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: em(1440, $fz);
+    min-height: em(888, $fz);
+    background-color: transparentize($secondary_lighter, 0.25);
+  }
+
+  &__wrapper {
+    position: relative;
+    align-items: flex-start;
+  }
+
+  &__col {
+    max-width: em(700, $fz);
+  }
+
+  &__subtitle {
+    margin-top: em(11, $fz);
+    color: color(primary);
+  }
+
+  &__paragraph {
+    max-width: em(522, $fz);
+    color: color(primary);
+  }
+}

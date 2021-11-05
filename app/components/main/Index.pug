@@ -2,6 +2,7 @@ include banner/Index
 include about/Index
 include team/Index
 include projects/Index
+include contacts/Index
 
 mixin getMain(parent)
     main.main(class=`${(parent) ? parent + '__main' : ''}`)
@@ -9,3 +10,4 @@ mixin getMain(parent)
       +getAbout('main', page.index.section.about)
       +getTeam('main', page.index.section.team)
       +getProjects('main', page.index.section.projects)
+      +getContacts('main')

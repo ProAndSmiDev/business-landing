@@ -2,4 +2,9 @@
   &__banner {
     min-height: 100vh;
   }
+
+  &__contacts {
+    position: relative;
+    min-height: em(888, $fz);
+  }
 }

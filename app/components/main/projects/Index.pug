@@ -4,10 +4,11 @@ mixin getProjects(parent, data)
   section.projects
     .u-wrapper.projects__wrapper
       +getTitle('projects', data.title, true)
-      p.projects-subtitle.projects__subtitle
-        span.projects-subtitle__text!= data.subtitle
-      p.projects-desc.projects__desc
-        span.projects-desc__text!= data.desc
+
+      +getSubtitle('projects', data.subtitle)
+
+      +getParagraph('projects', data.desc)
+
       ul.projects-list.projects__list
         for item in data.works
           li.projects-list__item

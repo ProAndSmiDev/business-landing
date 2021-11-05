@@ -1,0 +1,12 @@
+.subtitle {
+  color: $secondary_gray;
+  text-transform: uppercase;
+
+  &__text {
+    $fz: 18;
+    font-size: em($fz, $fz_base);
+    font-weight: 500;
+    line-height: em(56, $fz);
+    letter-spacing: 0.15px;
+  }
+}

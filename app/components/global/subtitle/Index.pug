@@ -1,0 +1,3 @@
+mixin getSubtitle(parent, text)
+  p.subtitle(class=`${(parent) ? parent + '__subtitle' : ''}`)
+    span.subtitle__text!= text
